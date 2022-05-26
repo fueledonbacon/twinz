@@ -1,12 +1,11 @@
 <template>
-  <div id="app" class="min-h-screen w-full bg-black text-white">
+  <div id="app" class="min-h-screen w-full bg-dark text-white">
     <main class="w-full">
       <HeroOpSection/>
       <CTAOSection/>
       <TeamSection/>
       <RoadmapSection/>
       <FaqSection/>
-
     </main>
   </div>
 </template>
