@@ -100,7 +100,6 @@
 </template>
 
 <script>
-
 export default {
   name: 'HeaderComponent',
   data() {
