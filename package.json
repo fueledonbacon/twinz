@@ -6,7 +6,8 @@
     "dev": "nuxt",
     "build": "nuxt build",
     "start": "nuxt start",
-    "generate": "nuxt generate --fail-on-error"
+    "generate": "nuxt generate --fail-on-error",
+    "format-all": "prettier --write \"**/*.vue\""
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.2.36",
@@ -41,8 +42,9 @@
     "eslint-config-prettier": "^8.3.0",
     "ethereum-waffle": "^3.4.0",
     "hardhat": "^2.6.8",
+    "prettier": "^2.6.2",
+    "prettier-plugin-tailwindcss": "^0.1.11",
     "nuxt-vite": "^0.3.5",
-    "prettier": "^2.3.2",
     "sass": "^1.43.4",
     "sass-loader": "^10.2.0"
   }

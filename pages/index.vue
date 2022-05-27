@@ -12,8 +12,8 @@
 <script>
 export default {
 	name: 'Test',
-  data() {
-    return {};
-  }
+	data() {
+		return {}
+	},
 }
 </script>

@@ -102,58 +102,58 @@
 
 <script>
 export default {
-  name: 'HeaderComponent',
-  data() {
-    return {
-      isNavigatorOpen: false,
-      scrollY: 0
-    }
-  },
-  computed: {},
-  mounted(){
-    window.addEventListener('scroll', (e) => {
-      this.scrollY = window.scrollY
-    })
-  },
-  methods: {
-    toggleNavigator() {
-      this.isNavigatorOpen = !this.isNavigatorOpen
-    },
-  },
+	name: 'HeaderComponent',
+	data() {
+		return {
+			isNavigatorOpen: false,
+			scrollY: 0,
+		}
+	},
+	computed: {},
+	mounted() {
+		window.addEventListener('scroll', (e) => {
+			this.scrollY = window.scrollY
+		})
+	},
+	methods: {
+		toggleNavigator() {
+			this.isNavigatorOpen = !this.isNavigatorOpen
+		},
+	},
 }
 </script>
 
 <style scoped>
-  @keyframes scaleIn {
-    from {
-      transform: scale(0);
-      opacity: 0;
-    }
-    to {
-      transform: scale(1);
-      opacity: 1;
-    }
-  }
-  @keyframes scaleOut {
-    from {
-      transform: scale(1);
-      opacity: 1;
-    }
-    to {
-      transform: scale(0);
-      opacity: 0;
-    }
-  }
+@keyframes scaleIn {
+	from {
+		transform: scale(0);
+		opacity: 0;
+	}
+	to {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+@keyframes scaleOut {
+	from {
+		transform: scale(1);
+		opacity: 1;
+	}
+	to {
+		transform: scale(0);
+		opacity: 0;
+	}
+}
 
-  .mobile-navigator {
-    transform-origin: top right;
-    background-color: #111827ee;
-  }
+.mobile-navigator {
+	transform-origin: top right;
+	background-color: #111827ee;
+}
 
-  .scale-enter-active {
-    animation: scaleIn 0.3s ease-in;
-  }
-  .scale-leave-active {
-    animation: scaleOut 0.3s ease-in;
-  }
+.scale-enter-active {
+	animation: scaleIn 0.3s ease-in;
+}
+.scale-leave-active {
+	animation: scaleOut 0.3s ease-in;
+}
 </style>

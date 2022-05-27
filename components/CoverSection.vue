@@ -1,12 +1,13 @@
 <template>
 	<section
 		id="cover-section"
-		class="bg-no-repeat bg-cover pt-24 min-h-screen lg:h-full bg-center">
-		<div
-			class="flex flex-col mx-auto text-center space-y-12">
+		class="min-h-screen bg-cover bg-center bg-no-repeat pt-24 lg:h-full">
+		<div class="mx-auto flex flex-col space-y-12 text-center">
 			<BigTitle />
 			<Mint v-if="1" />
-			<Countdown v-else :end="presaleStartTime" />
+			<Countdown
+				v-else
+				:end="presaleStartTime" />
 		</div>
 	</section>
 </template>
