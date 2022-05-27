@@ -1,9 +1,9 @@
 <template>
 	<div>
-		<div class="bg-[url(@/assets/images/about-bg.jpg)] bg-cover bg-no-repeat">
-			<div class="container mx-auto px-8 pt-24 xl:pt-32">
+		<div class="bg-hero bg-cover bg-bottom bg-no-repeat">
+			<div class="container mx-auto px-8 py-24 xl:py-32">
 				<div class="mb-2 text-xl">物語</div>
-				<div class="mb-10 text-6xl font-bold md:text-8xl">
+				<div class="mb-10 text-6xl font-bold lg:text-8xl">
 					TWIN<span class="text-primary">Z</span>
 				</div>
 				<div class="flex flex-col lg:flex-row">
@@ -34,11 +34,9 @@
 					</div>
 				</div>
 			</div>
-
-			<div class="h-24 bg-gradient-to-t from-dark to-transparent xl:h-32" />
 		</div>
 
-		<div class="container mx-auto px-8">
+		<div class="container mx-auto p-8">
 			<a class="w-56 bg-primary px-6 py-5 font-bold uppercase">
 				Twinz Newspaper
 			</a>
