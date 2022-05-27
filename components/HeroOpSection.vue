@@ -28,7 +28,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="flex flex-col sm:flex-row text-light">
+			<div class="relative flex flex-col sm:flex-row text-light z-1">
 				<div class="border-l-4 border-l-primary sm:w-1/3 px-6 py-2 mb-4 sm:mb-0">
 					<div class="max-w-2/3">
 						TwinZ is a collection of 10,000 digital individuals living as NFTs
