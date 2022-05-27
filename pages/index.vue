@@ -6,7 +6,8 @@
 			<HeroOpSection />
 			<StorySection />
 			<ProjectSection />
-			<TeamSection />
+			<UtilitiesSection />
+
 			<RoadmapSection />
 			<FaqSection />
 		</main>
