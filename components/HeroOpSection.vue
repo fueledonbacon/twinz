@@ -1,38 +1,48 @@
 <template>
-	<div class="container relative overflow-hidden px-8 pt-60 pb-24 mx-auto">
-		<div class="flex items-start justify-start mb-32">
-			<div class="w-2/3 uppercase">
-				<div class="text-light text-2xl font-bold mb-2">
-					Twinz NFT
-				</div>
-				<div class="text-7xl font-bold mb-8">
-					Come play with our family,
-					<span class="text-primary">Twin</span>ning is winning!
-				</div>
-				<div class="flex">
-					<a class="flex bg-primary font-bold border border-solid border-primary mr-8 px-9 py-5">
-						Learn more
-					</a>
-					<a class="flex text-primary font-bold border border-solid border-primary px-9 py-5">
-						Join to Discord
-					</a>
-				</div>
-			</div>
-		</div>
-		<div class="flex text-light pl-6 pr-12">
-			<div class="border-l-4 border-l-primary w-1/3 px-6 py-2">
-				<div class="max-w-2/3">
-					TwinZ is a collection of 10,000 digital individuals living as NFTs
-				</div>
-			</div>
-			<div class="border-l-4 border-l-primary w-1/3 px-6 py-2">
-				<div class="max-w-2/3">
-					5 different societies with completely different visual atmospheres
+	<div class="relative">
+		<img class="absolute w-3/10 top-10 right-0 md:z-10" src="@/assets/images/hero-1.png" alt="Sakura">
+		<img class="absolute w-2/10 bottom-[15%] left-0" src="@/assets/images/hero-2.png" alt="Sakura">
+		<div class="container px-8 pt-36 md:pt-60 pb-16 md:pb-24 mx-auto">
+			<div class="flex flex-row-reverse items-start justify-start mb-20 md:mb-32">
+				<div class="hidden lg:block relative w-2/5 pt-[40%]">
+					<img class="absolute top-[-10%] right-[80%] w-3/5" src="@/assets/images/hero-gate-back.svg" alt="Gate Back Pattern">
+					<div class="absolute w-full top-0 left-0 pt-[100%] bg-zinc-800 rounded-full" />
+					<img class="absolute w-1/5 bottom-[90%] right-[105%]" src="@/assets/images/hero-leave.png" alt="Leave">
+					<img class="absolute top-0 left-0 w-full z-20" src="@/assets/images/hero-gate.svg" alt="Gate">
+				</div>	
+				<div class="relative w-100 lg:w-3/5 uppercase">
+					<div class="text-light text-2xl font-bold mb-2">
+						Twinz NFT
+					</div>
+					<div class="text-4xl sm:text-5xl md:text-7xl font-bold mb-8">
+						Double the fun with double the rewards
+						Because <span class="text-primary">Twin</span>ning is winning!
+					</div>
+					<div class="flex flex-col items-center sm:flex-row">
+						<a class="inline-flex w-60 bg-primary font-bold border border-solid border-primary px-9 py-5 mb-4 sm:mb-0 sm:mr-8">
+							Learn more
+						</a>
+						<a class="inline-flex w-60 text-primary font-bold border border-solid border-primary px-9 py-5">
+							Join to Discord
+						</a>
+					</div>
 				</div>
 			</div>
-			<div class="border-l-4 border-l-primary w-1/3 px-6 py-2">
-				<div class="max-w-2/3">
-					Member of TwinZ are eligible for monthly airdrops of "Royalty Rewards".
+			<div class="flex flex-col sm:flex-row text-light">
+				<div class="border-l-4 border-l-primary sm:w-1/3 px-6 py-2 mb-4 sm:mb-0">
+					<div class="max-w-2/3">
+						TwinZ is a collection of 10,000 digital individuals living as NFTs
+					</div>
+				</div>
+				<div class="border-l-4 border-l-primary sm:w-1/3 px-6 py-2 mb-4 sm:mb-0">
+					<div class="max-w-2/3">
+						5 different societies with completely different visual atmospheres
+					</div>
+				</div>
+				<div class="border-l-4 border-l-primary sm:w-1/3 px-6 py-2">
+					<div class="max-w-2/3">
+						Member of TwinZ are eligible for monthly airdrops of "Royalty Rewards".
+					</div>
 				</div>
 			</div>
 		</div>
