@@ -1,5 +1,5 @@
 <template>
-	<div class="app">
+	<div class="app overfllow-hidden">
 		<Header />
 		<Nuxt />
 	</div>
