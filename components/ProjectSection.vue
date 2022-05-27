@@ -2,7 +2,7 @@
 	<div>
 		<div class="relative px-8 py-32">
 			<img
-				class="absolute top-0 right-0 w-2/5"
+				class="absolute top-0 right-0 w-2/5 max-w-[500px]"
 				src="@/assets/images/project-1.png"
 				alt="Sakura" />
 			<img
@@ -10,11 +10,11 @@
 				src="@/assets/images/project-2.svg"
 				alt="Cloud" />
 			<img
-				class="w-1/7 absolute bottom-10 right-0"
+				class="absolute bottom-10 right-0 w-1/6 max-w-[200px]"
 				src="@/assets/images/project-3.svg"
 				alt="Cloud" />
 			<img
-				class="w-2/7 absolute bottom-0 left-0 translate-y-1/2"
+				class="absolute bottom-0 left-0 w-2/5 max-w-[400px] translate-y-1/2"
 				src="@/assets/images/project-4.svg"
 				alt="Cloud" />
 
@@ -45,11 +45,11 @@
 		</div>
 		<div class="min-h-120 relative h-[60vh]">
 			<img
-				class="absolute bottom-0 right-0 w-1/3"
+				class="absolute bottom-0 right-0 w-1/3 max-w-[450px]"
 				src="@/assets/images/project-5.png"
 				alt="Sakura" />
 			<img
-				class="absolute bottom-[-20px] left-[-40px] w-1/2"
+				class="absolute bottom-[-20px] left-[-40px] w-1/2 max-w-[560px]"
 				src="@/assets/images/project-6.svg"
 				alt="Cloud" />
 			<div
@@ -85,10 +85,10 @@
 				</div>
 			</div>
 		</div>
-		<div class="container flex flex-col px-8 pt-12 pb-32 md:flex-row">
+		<div class="container mx-auto flex flex-col px-8 pt-12 pb-32 md:flex-row">
 			<div class="mb-12 w-full text-4xl font-bold md:mb-0 md:w-1/2">
-				The OT will be an exclusive membership the remains with the NFT Holder of
-				the Founder Pass
+				TwinZ will launch through a Founders Pass sold to founding members to be
+				known as the OT “Original TwinZ.”
 			</div>
 			<div class="w-full pl-0 font-bold text-light md:w-1/2 md:pl-12 lg:pl-16">
 				<div class="mb-8 text-2xl">
