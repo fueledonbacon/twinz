@@ -8,8 +8,7 @@
 			<NewspaperSection />
 			<ProjectSection />
 			<UtilitiesSection />
-
-			<RoadmapSection />
+			<FeaturesSection />
 			<FaqSection />
 		</main>
 	</div>
