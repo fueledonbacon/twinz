@@ -5,23 +5,24 @@
 			src="@/assets/images/features-1.png"
 			alt="Sakura" />
 		<div class="container relative mx-auto flex px-8">
-			<div class="hidden w-2/5 flex-shrink-0 pt-10 md:block">
-				<div
+			<div class="hidden w-2/5 flex-shrink-0 pt-10 pl-4 md:block">
+				<button
 					v-for="(feature, idx) in features"
 					:key="feature"
-					class="relative mb-10 text-4xl font-bold duration-300 before:absolute before:top-[50%] before:translate-y-[-50%] before:rounded-full before:bg-primary before:duration-300 before:content-['']"
+					class="relative mb-10 text-3xl font-bold uppercase duration-300 before:absolute before:top-[50%] before:translate-y-[-50%] before:rounded-full before:bg-primary before:duration-300 before:content-['']"
 					:class="{
 						'before:left-[-24px] before:h-12 before:w-12': currentPage === idx,
 						'opacity-50 before:left-0 before:h-0 before:w-0': currentPage !== idx,
-					}">
+					}"
+					@click="currentPage = idx">
 					<span class="relative"> {{ feature }} </span>
-				</div>
+				</button>
 			</div>
 			<Carousel
 				v-model="currentPage"
 				class="flex-grow">
 				<div class="border-y border-y-light pt-10 pb-16 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold md:hidden">
+					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
 						{{ features[0] }}
 					</div>
 
@@ -41,7 +42,7 @@
 					commitment, the better Utility value is achieved.
 				</div>
 				<div class="border-y border-y-light pb-16 pt-10 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold md:hidden">
+					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
 						{{ features[1] }}
 					</div>
 
@@ -58,7 +59,7 @@
 					builds bonds, and grows value.
 				</div>
 				<div class="border-y border-y-light pb-16 pt-10 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold md:hidden">
+					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
 						{{ features[2] }}
 					</div>
 
@@ -89,7 +90,7 @@
 					</ol>
 				</div>
 				<div class="border-y border-y-light pb-16 pt-10 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold md:hidden">
+					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
 						{{ features[3] }}
 					</div>
 
@@ -105,7 +106,7 @@
 					importantly it will be a great place to gather and have fun.
 				</div>
 				<div class="border-y border-y-light pb-16 pt-10 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold md:hidden">
+					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
 						{{ features[4] }}
 					</div>
 
