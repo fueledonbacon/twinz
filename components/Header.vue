@@ -1,103 +1,121 @@
 <template>
-  <header
-    class="bg-dark flex justify-center items-center fixed px-8 py-5 w-full z-50"
-    :class="scrollY < 1 ? 'sm:bg-transparent' : 'sm:bg-dark/75 backdrop-blur-md'"
-  >
-    <ConnectModal/>
+	<header
+		class="fixed z-50 flex w-full items-center justify-center bg-dark px-8 py-5"
+		:class="scrollY < 1 ? 'sm:bg-transparent' : 'backdrop-blur-md sm:bg-dark/75'">
+		<ConnectModal />
 
-    <div class="flex justify-between items-center w-full">
-      <Logo />
-      <!-- Desktop nav -->
-      <nav class="hidden lg:flex">
-        <ul class="flex text-white text-sm font-bold uppercase items-center">
-          <li class="mr-8">
-            <a href="/#story">Story</a>
-          </li>
-          <li class="mr-8">
-            <a href="/#project">About Project</a>
-          </li>
-          <li class="mr-8">
-            <a href="/#utilities">Utilities</a>
-          </li>
-          <li class="mr-8">
-            <a href="/#parties">Parties</a>
-          </li>
-          <li class="mr-8">
-            <a href="/#roadmap">Roadmap</a>
-          </li>
-          <li class="mr-8">
-            <a href="/#team">Team</a>
-          </li>
-          <li class="mr-8">
-            <a href="/#faq">FAQ</a>
-          </li>
-          <li>
-            <a href="/#community">Community</a>
-          </li>
-        </ul>
-      </nav>
-      <div class="flex">
-        <a class="flex items-center justify-center w-11 h-11 bg-primary mr-5">
-          <i class="fab fa-twitter text-2xl" />
-        </a>
-        <a class="flex items-center justify-center w-11 h-11 bg-primary">
-          <i class="fab fa-discord text-2xl" />
-        </a>
-      </div>
-      <!-- <ConnectButton/> -->
-      <!-- Mobile menu -->
-      <div class="flex lg:hidden justify-end">
-        <button
-          class="text-white z-20 mr-4"
-          @click="toggleNavigator"
-        >
-          <i class="text-2xl fas fa-bars" />
-        </button>
-        <transition name="scale">
-          <nav
-            v-if="isNavigatorOpen"
-            class="mobile-navigator flex absolute top-0 left-0 w-screen h-screen p-5 rounded-lg z-10 items-center justify-center text-3xl"
-            :class="{
-              'scale-in': isNavigatorOpen,
-              'scale-out': !isNavigatorOpen,
-            }"
-          >
-            <ul class="flex flex-col text-white text-center">
-              <li class="mb-3" @click="toggleNavigator">
-                <a href="/#story">Story</a>
-              </li>
-              <li class="mb-3" @click="toggleNavigator">
-                <a href="/#project">About Project</a>
-              </li>
-              <li class="mb-3" @click="toggleNavigator">
-                <a href="/#utilities">Utilities</a>
-              </li>
-              <li class="mb-3" @click="toggleNavigator">
-                <a href="/#parties">Parties</a>
-              </li>
-              <li class="mb-3" @click="toggleNavigator">
-                <a href="/#roadmap">Roadmap</a>
-              </li>
-              <li class="mb-3" @click="toggleNavigator">
-                <a href="/#team">Team</a>
-              </li>
-              <li class="mb-3" @click="toggleNavigator">
-                <a href="/#faq">FAQ</a>
-              </li>
-              <li class="mb-3" @click="toggleNavigator">
-                <a href="/#community">Community</a>
-              </li>
-              <li class="mt-8">
-                <a href="https://discord.com/invite/" class="discord">
-                  <img class="w-36 mx-auto" src="@/assets/images/discordBanner.png" alt="Discord" />
-                </a>
-              </li>
-            </ul>
-          </nav>
-        </transition>
-      </div>
-    </div>
-  </header>
+		<div class="flex w-full items-center justify-between">
+			<Logo />
+			<!-- Desktop nav -->
+			<nav class="hidden lg:flex">
+				<ul class="flex items-center text-sm font-bold uppercase text-white">
+					<li class="mr-8">
+						<a href="/#story">Story</a>
+					</li>
+					<li class="mr-8">
+						<a href="/#project">About Project</a>
+					</li>
+					<li class="mr-8">
+						<a href="/#utilities">Utilities</a>
+					</li>
+					<li class="mr-8">
+						<a href="/#parties">Parties</a>
+					</li>
+					<li class="mr-8">
+						<a href="/#roadmap">Roadmap</a>
+					</li>
+					<li class="mr-8">
+						<a href="/#team">Team</a>
+					</li>
+					<li class="mr-8">
+						<a href="/#faq">FAQ</a>
+					</li>
+					<li>
+						<a href="/#community">Community</a>
+					</li>
+				</ul>
+			</nav>
+			<div class="flex">
+				<a class="mr-5 flex h-11 w-11 items-center justify-center bg-primary">
+					<i class="fab fa-twitter text-2xl" />
+				</a>
+				<a class="flex h-11 w-11 items-center justify-center bg-primary">
+					<i class="fab fa-discord text-2xl" />
+				</a>
+			</div>
+			<!-- <ConnectButton/> -->
+			<!-- Mobile menu -->
+			<div class="flex justify-end lg:hidden">
+				<button
+					class="z-20 mr-4 text-white"
+					@click="toggleNavigator">
+					<i class="fas fa-bars text-2xl" />
+				</button>
+				<transition name="scale">
+					<nav
+						v-if="isNavigatorOpen"
+						class="mobile-navigator absolute top-0 left-0 z-10 flex h-screen w-screen items-center justify-center rounded-lg p-5 text-3xl"
+						:class="{
+							'scale-in': isNavigatorOpen,
+							'scale-out': !isNavigatorOpen,
+						}">
+						<ul class="flex flex-col text-center text-white">
+							<li
+								class="mb-3"
+								@click="toggleNavigator">
+								<a href="/#story">Story</a>
+							</li>
+							<li
+								class="mb-3"
+								@click="toggleNavigator">
+								<a href="/#project">About Project</a>
+							</li>
+							<li
+								class="mb-3"
+								@click="toggleNavigator">
+								<a href="/#utilities">Utilities</a>
+							</li>
+							<li
+								class="mb-3"
+								@click="toggleNavigator">
+								<a href="/#parties">Parties</a>
+							</li>
+							<li
+								class="mb-3"
+								@click="toggleNavigator">
+								<a href="/#roadmap">Roadmap</a>
+							</li>
+							<li
+								class="mb-3"
+								@click="toggleNavigator">
+								<a href="/#team">Team</a>
+							</li>
+							<li
+								class="mb-3"
+								@click="toggleNavigator">
+								<a href="/#faq">FAQ</a>
+							</li>
+							<li
+								class="mb-3"
+								@click="toggleNavigator">
+								<a href="/#community">Community</a>
+							</li>
+							<li class="mt-8">
+								<a
+									href="https://discord.com/invite/"
+									class="discord">
+									<img
+										class="mx-auto w-36"
+										src="@/assets/images/discordBanner.png"
+										alt="Discord" />
+								</a>
+							</li>
+						</ul>
+					</nav>
+				</transition>
+			</div>
+		</div>
+	</header>
 </template>
 
 <script>
