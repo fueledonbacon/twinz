@@ -9,6 +9,7 @@
 			<ProjectSection />
 			<UtilitiesSection />
 			<FeaturesSection />
+			<PartiesSection />
 			<FaqSection />
 		</main>
 	</div>

@@ -20,7 +20,7 @@
 
 			<div class="container relative mx-auto px-8">
 				<div class="mb-2 text-xl">物語</div>
-				<div class="mb-10 text-6xl font-bold uppercase lg:text-8xl">
+				<div class="mb-10 text-6xl font-bold uppercase lg:text-7xl">
 					The<br />Project
 				</div>
 				<div class="flex flex-col items-start md:flex-row">
