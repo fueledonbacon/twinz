@@ -1,7 +1,17 @@
 <template>
 	<div class="carousel">
-		<div class="mb-4 flex justify-between">
-			<div />
+		<div class="mb-4 flex items-center justify-between px-4">
+			<div class="flex">
+				<div
+					v-for="idx in totalCount"
+					:key="idx"
+					class="mr-2 h-2 w-2 rounded-full duration-300"
+					:class="{
+						'bg-primary': value === idx - 1,
+						'bg-light': value !== idx - 1,
+						'md:hidden': hideDots,
+					}" />
+			</div>
 			<div class="ml-auto">
 				<button
 					class="mr-2 inline-flex h-6 w-6 items-center justify-center"
@@ -34,7 +44,11 @@ export default {
 	props: {
 		value: {
 			type: Number,
-			default: 0,
+			required: true,
+		},
+		hideDots: {
+			type: Boolean,
+			default: false,
 		},
 	},
 	computed: {
