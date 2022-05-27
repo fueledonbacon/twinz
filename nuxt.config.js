@@ -24,7 +24,7 @@ export default {
 		}
 	},	// Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
-		title: 'NFT Template',
+		title: 'Twinz NFT',
 		htmlAttrs: {
 			lang: 'en',
 		},
@@ -34,7 +34,7 @@ export default {
 			{ name: 'format-detection', content: 'telephone=no' },
 			...getSiteMeta({
 				url: 'nft-template.fueledonbacon.com' ,
-				title: 'NFT Template',
+				title: 'Twinz NFT',
 				description: 'This is the nft template',
 				mainImage: '/mainBanner.png',
 			}),
@@ -116,7 +116,6 @@ export default {
 			solid: true,
 			brands: true
 		}
-
 	},
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {

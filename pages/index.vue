@@ -1,10 +1,11 @@
 <template>
 	<div
 		id="app"
-		class="min-h-screen w-full bg-black text-white">
+		class="min-h-screen w-full bg-dark text-white">
 		<main class="w-full">
 			<HeroOpSection />
-			<CTAOSection />
+			<StorySection />
+			<ProjectSection />
 			<TeamSection />
 			<RoadmapSection />
 			<FaqSection />
