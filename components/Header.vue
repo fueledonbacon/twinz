@@ -19,7 +19,7 @@
 						<a href="/#utilities">Utilities</a>
 					</li>
 					<li class="mr-8">
-						<a href="/#parties">Parties</a>
+						<a href="/#rarities">Rarities</a>
 					</li>
 					<li class="mr-8">
 						<a href="/#roadmap">Roadmap</a>
@@ -78,7 +78,7 @@
 							<li
 								class="mb-3"
 								@click="toggleNavigator">
-								<a href="/#parties">Parties</a>
+								<a href="/#rarities">Rarities</a>
 							</li>
 							<li
 								class="mb-3"

@@ -9,7 +9,7 @@
 				<button
 					v-for="(feature, idx) in features"
 					:key="feature"
-					class="block relative mb-10 text-3xl font-bold uppercase duration-300 before:absolute before:top-[50%] before:translate-y-[-50%] before:rounded-full before:bg-primary before:duration-300 before:content-['']"
+					class="relative mb-10 block text-3xl font-bold uppercase duration-300 before:absolute before:top-[50%] before:translate-y-[-50%] before:rounded-full before:bg-primary before:duration-300 before:content-['']"
 					:class="{
 						'before:left-[-24px] before:h-12 before:w-12': currentPage === idx,
 						'opacity-50 before:left-0 before:h-0 before:w-0': currentPage !== idx,
@@ -20,7 +20,8 @@
 			</div>
 			<Carousel
 				v-model="currentPage"
-				class="flex-grow">
+				class="flex-grow"
+				hide-dots>
 				<div class="border-y border-y-light pt-10 pb-16 text-lg text-light">
 					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
 						{{ features[0] }}
