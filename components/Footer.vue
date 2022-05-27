@@ -1,10 +1,23 @@
 <template>
-  <footer class="relative bg-blueGray-200 pt-8 pb-6">
-  <div class="bottom-auto top-0 left-0 right-0 w-full absolute pointer-events-none overflow-hidden -mt-20 h-20" style="transform: translateZ(0px);">
-    <svg class="absolute bottom-0 overflow-hidden" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" version="1.1" viewBox="0 0 2560 100" x="0" y="0"><polygon class="text-gray-200 fill-current" points="2560 0 2560 100 0 100"></polygon></svg>
-  </div>
-  <div class="container mx-auto px-4">
-    <!-- <div class="flex flex-wrap text-center lg:text-left">
+	<footer class="bg-blueGray-200 relative pt-8 pb-6">
+		<div
+			class="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 h-20 w-full overflow-hidden"
+			style="transform: translateZ(0px)">
+			<svg
+				class="absolute bottom-0 overflow-hidden"
+				xmlns="http://www.w3.org/2000/svg"
+				preserveAspectRatio="none"
+				version="1.1"
+				viewBox="0 0 2560 100"
+				x="0"
+				y="0">
+				<polygon
+					class="fill-current text-gray-200"
+					points="2560 0 2560 100 0 100"></polygon>
+			</svg>
+		</div>
+		<div class="container mx-auto px-4">
+			<!-- <div class="flex flex-wrap text-center lg:text-left">
       <div class="w-full lg:w-6/12 px-4">
         <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
         <h5 class="text-lg mt-0 mb-2 text-blueGray-600"> Find us on any of these platforms. </h5>
@@ -62,23 +75,24 @@
         </div>
       </div>
     </div> -->
-    <hr class="my-6 border-blueGray-300">
-    <div class="flex flex-wrap items-center md:justify-between justify-center">
-      <div class="w-full md:w-4/12 px-4 mx-auto text-center">
-        <div class="text-sm text-blueGray-500 font-semibold py-1"> Copyright © 2022 made for the 🌎 with a 💔 and 🥓 </div>
-      </div>
-    </div>
-  </div>
-</footer>
+			<hr class="border-blueGray-300 my-6" />
+			<div class="flex flex-wrap items-center justify-center md:justify-between">
+				<div class="mx-auto w-full px-4 text-center md:w-4/12">
+					<div class="text-blueGray-500 py-1 text-sm font-semibold">
+						Copyright © 2022 made for the 🌎 with a 💔 and 🥓
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
 </template>
 
 <script>
-
 export default {
-  name:'Footer',
+	name: 'Footer',
 }
 </script>
 
-<style lang="scss" scoped>
-
-</style>
+<style
+	lang="scss"
+	scoped></style>
