@@ -1,11 +1,11 @@
 <template>
 	<div class="relative">
 		<img
-			class="absolute top-10 right-0 w-1/3 md:z-10"
+			class="absolute top-10 right-0 w-1/3 max-w-[400px] md:z-10"
 			src="@/assets/images/hero-1.png"
 			alt="Sakura" />
 		<img
-			class="absolute bottom-[15%] left-0 w-1/5"
+			class="absolute bottom-[15%] left-0 w-1/5 max-w-[300px]"
 			src="@/assets/images/hero-2.png"
 			alt="Sakura" />
 		<div class="container mx-auto px-8 pt-36 pb-16 md:pt-60 md:pb-24">
