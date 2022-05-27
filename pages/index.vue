@@ -5,6 +5,7 @@
 		<main class="w-full">
 			<HeroOpSection />
 			<StorySection />
+			<NewspaperSection />
 			<ProjectSection />
 			<UtilitiesSection />
 
