@@ -8,7 +8,8 @@ module.exports = {
         light: '#D4D4D4'
       },
       backgroundImage: {
-        'hero': 'url(@/assets/images/about-bg.jpg)'
+        'hero': 'url(@/assets/images/about-bg.jpg)',
+        'utilities': 'url(@/assets/images/utilities-bg.jpg)'
       }
     },
   },
