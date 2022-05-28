@@ -10,10 +10,10 @@
 			<div class="mb-2 text-xl">ストラテジー</div>
 			<div class="mb-10 flex flex-col md:flex-row">
 				<div
-					class="mb-4 text-6xl font-bold uppercase md:mb-0 md:w-2/5 md:text-7xl xl:text-8xl">
+					class="mb-4 text-6xl font-bold md:mb-0 md:w-2/5 md:text-7xl xl:text-8xl">
 					Rarities
 				</div>
-				<div class="text-lg text-light md:w-3/5">
+				<div class="font-lato text-lg text-light md:w-3/5">
 					TwinZ is a community represented by 5 different Societies that reflect the
 					best of who we are IRL and more importantly who we can become in the
 					Metaverse. Where barriers won’t exist and all are welcome. TwinZ is
@@ -33,7 +33,7 @@
 							class="absolute top-0 left-0 h-1/2 w-full sm:h-full sm:w-1/2"
 							src="@/assets/images/rarities-1.jpg" />
 						<div
-							class="absolute bottom-0 right-0 flex h-1/2 w-full items-center justify-center p-6 uppercase sm:h-full sm:w-1/2 md:p-16">
+							class="absolute bottom-0 right-0 flex h-1/2 w-full items-center justify-center p-6 sm:h-full sm:w-1/2 md:p-16">
 							<div class="max-w-[280px] sm:max-w-full">
 								<div class="mb-5 text-xl text-light md:text-2xl">クリエーター</div>
 								<div class="mb-8 text-2xl font-bold text-dark md:text-4xl">

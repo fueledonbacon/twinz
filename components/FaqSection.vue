@@ -3,10 +3,8 @@
 		id="faq"
 		class="h-700px container mx-auto flex w-full flex-col py-32 px-8">
 		<div class="mb-2 text-xl">質問</div>
-		<div class="mb-10 mb-8 text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
-			FAQ
-		</div>
-		<div class="mb-8 max-w-3xl text-3xl font-bold uppercase text-neutral-400">
+		<div class="mb-10 mb-8 text-6xl font-bold md:text-7xl xl:text-8xl">FAQ</div>
+		<div class="mb-8 max-w-3xl text-3xl font-bold text-neutral-400">
 			If your question isn’t answered below, you can reach out to us on Twitter or
 			Discord
 		</div>

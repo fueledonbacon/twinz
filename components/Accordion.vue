@@ -23,7 +23,7 @@
 						d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
 				</svg>
 			</h4>
-			<p class="-mt-2 hidden pb-7 text-light sm:text-lg">
+			<p class="font-lato -mt-2 hidden pb-7 text-light sm:text-lg">
 				{{ item.description }}
 			</p>
 		</div>

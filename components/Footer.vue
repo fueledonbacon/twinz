@@ -2,8 +2,7 @@
 	<footer
 		id="footer"
 		class="container mx-auto px-8 pt-24 pb-12">
-		<div
-			class="mx-auto mb-16 max-w-[720px] text-center text-2xl font-bold uppercase">
+		<div class="mx-auto mb-16 max-w-[720px] text-center text-2xl font-bold">
 			The <span class="text-primary">Twin</span>Zverse is one of the most dynamic,
 			unique, and loyal <span class="text-primary">families</span> you could ever
 			imagine. Come join our family and enjoy with us because
@@ -18,7 +17,7 @@
 			</a>
 		</div>
 		<ul
-			class="flex flex-wrap items-center justify-center text-sm font-bold uppercase text-white">
+			class="flex flex-wrap items-center justify-center text-sm font-bold text-white">
 			<li class="my-2 mr-4 inline-block xl:mr-8 2xl:mr-12">
 				<a
 					class="whitespace-nowrap"

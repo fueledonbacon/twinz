@@ -2,22 +2,153 @@
 @tailwind components;
 @tailwind utilities;
 
-
+/* LEMON MILK font */
 @font-face {
-	font-family: bowlby;
-	src: url('/fonts/bowlby-one.woff2') format('woff2');
+	font-family: 'LEMON MILK';
+	font-style: normal;
+	font-weight: 400;
+	src: local('LEMON MILK'), url('../font/LemonMilkLight-owxMq.otf') format('woff');
 }
 
 @font-face {
-	font-family: monsterrat;
-	src: url('/fonts/Montserrat-Regular.ttf') format('TrueType');
+	font-family: 'LEMON MILK';
+	font-style: italic;
+	font-weight: 400;
+	src: local('LEMON MILK'), url('../font/LemonMilkLightItalic-7BjPE.otf') format('woff');
 }
 
 @font-face {
-	font-family: monsterrat-bold;
-	src: url('/fonts/Montserrat-Bold.ttf') format('TrueType');
+	font-family: 'LEMON MILK';
+	font-style: normal;
+	font-weight: 300;
+	src: local('LEMON MILK'), url('../font/LemonMilkRegular-X3XE2.otf') format('woff');
+}
+
+@font-face {
+	font-family: 'LEMON MILK';
+	font-style: italic;
+	font-weight: 300;
+	src: local('LEMON MILK'), url('../font/LemonMilkRegularItalic-L3AEy.otf') format('woff');
+}
+
+@font-face {
+	font-family: 'LEMON MILK';
+	font-style: normal;
+	font-weight: 500;
+	src: local('LEMON MILK'), url('../font/LemonMilkMedium-mLZYV.otf') format('woff');
+}
+
+@font-face {
+	font-family: 'LEMON MILK';
+	font-style: italic;
+	font-weight: 500;
+	src: local('LEMON MILK'), url('../font/LemonMilkMediumItalic-d95nl.otf') format('woff');
+}
+
+@font-face {
+	font-family: 'LEMON MILK';
+	font-style: normal;
+	font-weight: 700;
+	src: local('LEMON MILK'), url('../font/LemonMilkBold-gx2B3.otf') format('woff');
+}
+
+@font-face {
+	font-family: 'LEMON MILK';
+	font-style: italic;
+	font-weight: 700;
+	src: local('LEMON MILK'), url('../font/LemonMilkBoldItalic-PKZ3P.otf') format('woff');
+}
+
+/* Lato font */
+@font-face {
+	font-family: Lato;
+	font-weight: 200;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-Thin.ttf) format("woff");
+}
+
+@font-face {
+	font-family: Lato;
+	font-weight: 200;
+	font-style: italic;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-ThinItalic.ttf) format("woff");
+}
+
+@font-face {
+	font-family: "Lato Medium";
+	font-weight: 300;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-Light.ttf) format("woff");
+}
+
+@font-face {
+	font-family: "Lato Medium";
+	font-weight: 300;
+	font-style: italic;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-LightItalic.ttf) format("woff");
+}
+
+@font-face {
+	font-family: Lato;
+	font-weight: 400;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-Regular.ttf) format("woff");
+}
+
+@font-face {
+	font-family: Lato;
+	font-weight: 400;
+	font-style: italic;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-Italic.ttf) format("woff");
+}
+
+@font-face {
+	font-family: Lato;
+	font-weight: 700;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-Bold.ttf) format("woff");
+}
+
+@font-face {
+	font-family: Lato;
+	font-weight: 700;
+	font-style: italic;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-BoldItalic.ttf) format("woff");
+}
+
+@font-face {
+	font-family: Lato;
+	font-weight: 900;
+	font-style: normal;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-Black.ttf) format("woff");
+}
+
+@font-face {
+	font-family: Lato;
+	font-weight: 900;
+	font-style: italic;
+	text-rendering: optimizeLegibility;
+	src: url(../font/Lato-BlackItalic.ttf) format("woff");
 }
 
 html {
 	scroll-behavior: smooth;
+	font-family: 'LEMON MILK', sans-serif;
+}
+
+.font-lemon-milk {
+	font-family: 'LEMON MILK', sans-serif;
+}
+
+.font-lato {
+	font-family: Lato, sans-serif;
 }

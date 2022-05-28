@@ -1,6 +1,6 @@
 <template>
 	<section id="project">
-		<div class="relative px-8 py-32">
+		<div class="relative py-32">
 			<img
 				class="absolute top-0 right-0 w-2/5 max-w-[500px]"
 				src="@/assets/images/project-1.png"
@@ -20,7 +20,7 @@
 
 			<div class="container relative mx-auto px-8">
 				<div class="mb-2 text-xl">物語</div>
-				<div class="mb-10 text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
+				<div class="mb-10 text-6xl font-bold md:text-7xl xl:text-8xl">
 					The<br />Project
 				</div>
 				<div class="flex flex-col items-start md:flex-row">
@@ -29,11 +29,11 @@
 						src="@/assets/images/project-collection.jpg"
 						alt="TWinz Collection" />
 					<div class="mt-8 w-full md:mt-0 md:w-3/5 md:pl-8 lg:w-2/5 xl:w-3/5">
-						<div class="mb-8 text-2xl font-bold uppercase lg:text-3xl">
+						<div class="mb-8 text-2xl font-bold lg:text-3xl">
 							Twinz is a collection of 10,1000 digital individuals living as NFTs
 							stored as an ERC-721 on the Ethereum Blockchain.
 						</div>
-						<div class="text-light">
+						<div class="font-lato text-light">
 							Metadata and images will be hosted on IPFS. The TwinZ collection is
 							algorithmically generated through a custom complex scalable code.
 							Depending on the family a hash code is generated and stored with TwinzNFT
@@ -63,7 +63,7 @@
 						<b>1,500</b>
 						<span class="text-[.4em]">ツイン</span>
 					</div>
-					<span class="text-lg"> Sets of Identical TwinZ </span>
+					<span class="font-lato text-lg text-light"> Sets of Identical TwinZ </span>
 				</div>
 				<div class="relative mx-auto h-1/3">
 					<div
@@ -72,7 +72,7 @@
 						<b>3,000</b>
 						<span class="text-[.4em]">ツイン</span>
 					</div>
-					<span class="text-lg"> Sets of Fraternal TwinZ </span>
+					<span class="font-lato text-lg text-light"> Sets of Fraternal TwinZ </span>
 				</div>
 				<div class="relative mx-auto h-1/3 sm:mr-0">
 					<div
@@ -81,7 +81,7 @@
 						<b>500</b>
 						<span class="text-[.4em]">ツイン</span>
 					</div>
-					<span class="text-lg"> Sets of Exclusive TwinZ </span>
+					<span class="font-lato text-lg text-light"> Sets of Exclusive TwinZ </span>
 				</div>
 			</div>
 		</div>
@@ -95,7 +95,7 @@
 					The OT will be an exclusive membership the remains with the NFT Holder of
 					the Founder Pass
 				</div>
-				<div>
+				<div class="font-lato">
 					Exclusive member benefits will include VIP Experiences at IRL and Metaverse
 					Events, specialty merchandise, and additional airdrop of the TwinZ token
 					when released. All OT’s will be given first rights to Mint 5 NFTs

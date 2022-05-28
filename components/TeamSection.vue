@@ -8,8 +8,7 @@
 			alt="Sakura" />
 		<div class="container relative mx-auto px-8">
 			<div class="mb-2 text-xl">チーム</div>
-			<div
-				class="mb-10 mb-12 text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
+			<div class="mb-10 mb-12 text-6xl font-bold md:text-7xl xl:text-8xl">
 				Team
 			</div>
 			<div class="flex flex-wrap">
@@ -27,10 +26,10 @@
 					<div class="mb-2 font-bold text-primary">
 						{{ member.twitter }}
 					</div>
-					<div class="mb-3 text-lg text-neutral-400">
+					<div class="font-lato mb-3 text-lg text-neutral-400">
 						{{ member.role }}
 					</div>
-					<div class="text-lg text-light">
+					<div class="font-lato text-lg text-light">
 						{{ member.description }}
 					</div>
 				</div>

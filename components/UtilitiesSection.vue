@@ -5,10 +5,10 @@
 		<div class="container mx-auto flex flex-col px-8 pt-40 pb-20 lg:flex-row">
 			<div class="mb-16 w-full lg:mb-0 lg:w-1/2 lg:pr-20 lg:pr-32">
 				<div class="mb-2 text-neutral-500">ストラテジー</div>
-				<div class="mb-10 text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
+				<div class="mb-10 text-6xl font-bold md:text-7xl xl:text-8xl">
 					Utilities
 				</div>
-				<div class="text-light">
+				<div class="font-lato text-light">
 					Anyone owning a TwinZ NFT will be part of a unique club invited to
 					participate in exclusive community IRL and Metaverse Events. All TwinZ are
 					eligible for airdrops of prizes and rewards. Owning a TwinZ provides
@@ -22,10 +22,10 @@
 						class="absolute bottom-0 right-4 h-24 w-24 translate-y-[50%] rounded-full bg-primary" />
 					<div
 						class="relative rounded-tr-[150px] bg-neutral-500/20 p-10 pr-16 backdrop-blur-sm">
-						<div class="mb-5 text-3xl font-bold uppercase">
+						<div class="mb-5 text-3xl font-bold">
 							<span class="text-primary">Original</span> Twinz mint pass holders
 						</div>
-						<div class="text-light">
+						<div class="font-lato text-light">
 							As a founding member of TwinZ you are eligible for monthly airdrops of
 							“Rewards.” OTs will have exclusive access on social platforms, Metaverse
 							club and IRL events. OTs will receive 5% of monthly rewards that are
@@ -38,10 +38,10 @@
 				<div class="relative mb-8">
 					<div
 						class="relative rounded-tr-[150px] bg-neutral-500/20 p-10 pr-16 backdrop-blur-sm">
-						<div class="mb-5 text-3xl font-bold uppercase">
+						<div class="mb-5 text-3xl font-bold font-bold">
 							<span class="text-primary">Identical</span> TwinZ
 						</div>
-						<div class="text-light">
+						<div class="font-lato text-light">
 							Anyone owning a set of matching Identical Twins that are staked on
 							TwinZNFT.com will automatically receive a special prize and be eligible
 							for monthly airdrops. Identical TwinZ stakers will receive 5% of monthly
@@ -54,10 +54,10 @@
 				<div class="relative mb-8">
 					<div
 						class="relative rounded-tr-[150px] bg-neutral-500/20 p-10 pr-16 backdrop-blur-sm">
-						<div class="mb-5 text-3xl font-bold uppercase">
+						<div class="mb-5 text-3xl font-bold">
 							<span class="text-primary">Fractternal</span> Twinz
 						</div>
-						<div class="text-light">
+						<div class="font-lato text-light">
 							Anyone owning a set of Fraternal Twins that have been confirmed and
 							staked on TwinZNFT.com will automatically receive a special prize and be
 							eligible for monthly airdrops. Fraternal TwinZ stakers will receive 10%
@@ -73,10 +73,10 @@
 						class="absolute top-32 right-0 h-12 w-12 translate-x-1/2 rounded-full bg-primary" />
 					<div
 						class="relative rounded-tr-[150px] bg-neutral-500/20 p-10 pr-16 pb-16 backdrop-blur-sm">
-						<div class="mb-5 text-3xl font-bold uppercase">
+						<div class="mb-5 text-3xl font-bold">
 							<span class="text-primary">Exclusive</span> Twinz
 						</div>
-						<div class="text-light">
+						<div class="font-lato text-light">
 							Anyone owning a set of Exclusive Twins that are staked on TwinZNFT.com
 							will be eligible for monthly airdrops. Exclusive TwinZ stakers will
 							receive 15% of monthly rewards that are split among all Exclusive TwinZ

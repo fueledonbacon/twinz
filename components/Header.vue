@@ -9,7 +9,7 @@
 			<Logo />
 			<!-- Desktop nav -->
 			<nav class="hidden lg:flex">
-				<ul class="flex items-center text-sm font-bold uppercase text-white">
+				<ul class="flex items-center text-sm font-bold text-white">
 					<li class="mr-4 xl:mr-8 2xl:mr-12">
 						<a href="/#story">Story</a>
 					</li>
@@ -36,7 +36,7 @@
 					</li>
 				</ul>
 			</nav>
-			<div class="flex">
+			<div class="hidden lg:flex">
 				<a class="mr-5 flex h-11 w-11 items-center justify-center bg-primary">
 					<i class="fab fa-twitter text-2xl" />
 				</a>

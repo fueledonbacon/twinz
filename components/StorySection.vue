@@ -7,7 +7,7 @@
 			<div class="mb-10 text-6xl font-bold md:text-7xl xl:text-8xl">
 				TWIN<span class="text-primary">Z</span>
 			</div>
-			<div class="flex flex-col lg:flex-row">
+			<div class="font-lato flex flex-col text-light lg:flex-row">
 				<div class="mb-4 w-full lg:mb-0 lg:w-1/3 lg:pr-8">
 					TwinZ NFT is committed to building a community that grows stronger through
 					the network of the project’s owners. TwinZ are a unique club with a tight

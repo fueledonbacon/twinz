@@ -11,7 +11,7 @@
 				<button
 					v-for="(feature, idx) in features"
 					:key="feature"
-					class="relative mb-10 block text-3xl font-bold uppercase duration-300 before:absolute before:top-[50%] before:translate-y-[-50%] before:rounded-full before:bg-primary before:duration-300 before:content-['']"
+					class="relative mb-10 block text-3xl font-bold duration-300 before:absolute before:top-[50%] before:translate-y-[-50%] before:rounded-full before:bg-primary before:duration-300 before:content-['']"
 					:class="{
 						'before:left-[-24px] before:h-12 before:w-12': currentPage === idx,
 						'opacity-50 before:left-0 before:h-0 before:w-0': currentPage !== idx,
@@ -24,8 +24,9 @@
 				v-model="currentPage"
 				class="flex-grow"
 				hide-dots>
-				<div class="border-y border-y-light pt-10 pb-16 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
+				<div
+					class="font-lato border-y border-y-light pt-10 pb-16 text-lg text-light">
+					<div class="font-lemon-milk mb-6 text-4xl font-bold text-white md:hidden">
 						{{ features[0] }}
 					</div>
 
@@ -44,8 +45,9 @@
 					of individuals who participate. The stronger the community, the longer the
 					commitment, the better Utility value is achieved.
 				</div>
-				<div class="border-y border-y-light pb-16 pt-10 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
+				<div
+					class="font-lato border-y border-y-light pb-16 pt-10 text-lg text-light">
+					<div class="font-lemon-milk mb-6 text-4xl font-bold text-white md:hidden">
 						{{ features[1] }}
 					</div>
 
@@ -61,8 +63,9 @@
 					your experience. The real game begins as our TwinZ community interacts,
 					builds bonds, and grows value.
 				</div>
-				<div class="border-y border-y-light pb-16 pt-10 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
+				<div
+					class="font-lato border-y border-y-light pb-16 pt-10 text-lg text-light">
+					<div class="font-lemon-milk mb-6 text-4xl font-bold text-white md:hidden">
 						{{ features[2] }}
 					</div>
 
@@ -92,8 +95,9 @@
 						</li>
 					</ol>
 				</div>
-				<div class="border-y border-y-light pb-16 pt-10 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
+				<div
+					class="font-lato border-y border-y-light pb-16 pt-10 text-lg text-light">
+					<div class="font-lemon-milk mb-6 text-4xl font-bold text-white md:hidden">
 						{{ features[3] }}
 					</div>
 
@@ -108,8 +112,9 @@
 					events will be held in the TwinZverse to enrich our community. Most
 					importantly it will be a great place to gather and have fun.
 				</div>
-				<div class="border-y border-y-light pb-16 pt-10 text-lg text-light">
-					<div class="mb-6 text-4xl font-bold uppercase text-white md:hidden">
+				<div
+					class="font-lato border-y border-y-light pb-16 pt-10 text-lg text-light">
+					<div class="font-lemon-milk mb-6 text-4xl font-bold text-white md:hidden">
 						{{ features[4] }}
 					</div>
 
