@@ -1,5 +1,9 @@
 <template>
-	<section class="relative">
+	<section class="relative py-16">
+		<img
+			class="absolute bottom-[-10vw] left-0 w-1/3 max-w-[450px]"
+			src="@/assets/images/rarities-2.png"
+			alt="Sakura" />
 		<div class="container mx-auto px-8">
 			<div class="mb-2 text-xl">ストラテジー</div>
 			<div class="mb-10 flex flex-col md:flex-row">
@@ -21,18 +25,18 @@
 					:key="idx"
 					class="px-4">
 					<div
-						class="relative items-stretch overflow-hidden rounded-lg bg-white pt-[50%]">
+						class="relative items-stretch overflow-hidden rounded-lg bg-white pt-[200%] sm:pt-[50%]">
 						<img
-							class="absolute top-0 left-0 h-full w-1/2"
+							class="absolute top-0 left-0 h-1/2 w-full sm:h-full sm:w-1/2"
 							src="@/assets/images/rarities-1.jpg" />
 						<div
-							class="absolute top-0 right-0 flex h-full w-1/2 items-center justify-center p-16 uppercase">
-							<div>
-								<div class="mb-5 text-2xl text-light">クリエーター</div>
-								<div class="mb-8 text-4xl font-bold text-dark">
+							class="absolute bottom-0 right-0 flex h-1/2 w-full items-center justify-center p-6 uppercase sm:h-full sm:w-1/2 md:p-16">
+							<div class="max-w-[280px] sm:max-w-full">
+								<div class="mb-5 text-xl text-light md:text-2xl">クリエーター</div>
+								<div class="mb-8 text-2xl font-bold text-dark md:text-4xl">
 									Creator<span class="text-primary">Z</span>
 								</div>
-								<div class="text-2xl font-bold text-neutral-400">
+								<div class="text-xl font-bold text-neutral-400 md:text-2xl">
 									The most creative artist, designers and developers
 								</div>
 							</div>

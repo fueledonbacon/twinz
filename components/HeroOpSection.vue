@@ -34,11 +34,11 @@
 					</div>
 					<div class="flex flex-col items-center sm:flex-row">
 						<a
-							class="mb-4 inline-flex w-60 border border-solid border-primary bg-primary px-9 py-5 font-bold sm:mb-0 sm:mr-8">
+							class="mb-4 inline-flex w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8">
 							Learn more
 						</a>
 						<a
-							class="inline-flex w-60 border border-solid border-primary px-9 py-5 font-bold text-primary">
+							class="inline-flex w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary">
 							Join to Discord
 						</a>
 					</div>
