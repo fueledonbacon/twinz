@@ -1,98 +1,44 @@
 <template>
-	<footer class="bg-blueGray-200 relative pt-8 pb-6">
-		<div
-			class="pointer-events-none absolute bottom-auto top-0 left-0 right-0 -mt-20 h-20 w-full overflow-hidden"
-			style="transform: translateZ(0px)">
-			<svg
-				class="absolute bottom-0 overflow-hidden"
-				xmlns="http://www.w3.org/2000/svg"
-				preserveAspectRatio="none"
-				version="1.1"
-				viewBox="0 0 2560 100"
-				x="0"
-				y="0">
-				<polygon
-					class="fill-current text-gray-200"
-					points="2560 0 2560 100 0 100"></polygon>
-			</svg>
+	<footer class="container mx-auto px-8 pt-24 pb-12">
+		<div class="text-2xl font-bold uppercase text-center mb-16 max-w-[720px] mx-auto">
+			The <span class="text-primary">Twin</span>Zverse is one of the most dynamic,
+			unique, and loyal <span class="text-primary">families</span> you could ever
+			imagine. Come join our family and enjoy with us because
+			<span class="text-primary">Twinning is Winning</span>!
 		</div>
-		<div class="container mx-auto px-4">
-			<!-- <div class="flex flex-wrap text-center lg:text-left">
-      <div class="w-full lg:w-6/12 px-4">
-        <h4 class="text-3xl font-semibold">Let's keep in touch!</h4>
-        <h5 class="text-lg mt-0 mb-2 text-blueGray-600"> Find us on any of these platforms. </h5>
-        <div class="mt-6 lg:mb-0 mb-6">
-          <button class="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-twitter"></i>
-          </button>
-          <button class="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-facebook-square"></i>
-          </button>
-          <button class="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-dribbble"></i>
-          </button>
-          <button class="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-            <i class="fab fa-github"></i>
-          </button>
-        </div>
-      </div>
-      <div class="w-full lg:w-6/12 px-4">
-        <div class="flex flex-wrap items-top mb-6">
-          <div class="w-full lg:w-4/12 px-4 ml-auto">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2"> Useful Links </span>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm keychainify-checked" href="https://www.creative-tim.com/presentation?ref=vn-footer"> Ukraine Link </a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm keychainify-checked" href="https://blog.creative-tim.com?ref=vn-footer"> Ukraine Link </a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm keychainify-checked" href="https://www.github.com/creativetimofficial?ref=vn-footer"> Ukraine Link </a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm keychainify-checked" href="https://www.creative-tim.com/bootstrap-themes/free?ref=vn-footer"> Ukraine Link </a>
-              </li>
-            </ul>
-          </div>
-          <div class="w-full lg:w-4/12 px-4">
-            <span class="block uppercase text-blueGray-500 text-sm font-semibold mb-2"> Other Resources </span>
-            <ul class="list-unstyled">
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm keychainify-checked" href="https://github.com/creativetimofficial/vue-notus/blob/main/LICENSE.md?ref=vn-footer"> MIT License </a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm keychainify-checked" href="https://creative-tim.com/terms?ref=vn-footer"> Terms &amp; Conditions </a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm keychainify-checked" href="https://creative-tim.com/privacy?ref=vn-footer"> Privacy Policy </a>
-              </li>
-              <li>
-                <a class="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm keychainify-checked" href="https://creative-tim.com/contact-us?ref=vn-footer"> Contact Us </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div> -->
-			<hr class="border-blueGray-300 my-6" />
-			<div class="flex flex-wrap items-center justify-center md:justify-between">
-				<div class="mx-auto w-full px-4 text-center md:w-4/12">
-					<div class="text-blueGray-500 py-1 text-sm font-semibold">
-						Copyright © 2022 made for the 🌎 with a 💔 and 🥓
-					</div>
-				</div>
-			</div>
-		</div>
+    <div class="flex justify-center mb-20">
+      <a class="mr-5 flex h-11 w-11 items-center justify-center bg-primary">
+        <i class="fab fa-twitter text-2xl" />
+      </a>
+      <a class="flex h-11 w-11 items-center justify-center bg-primary">
+        <i class="fab fa-discord text-2xl" />
+      </a>
+    </div>
+    <ul class="flex flex-wrap items-center justify-center text-sm font-bold uppercase text-white">
+      <li class="inline-block mr-4 xl:mr-8 2xl:mr-12 my-2">
+        <a class="whitespace-nowrap" href="/#story">Story</a>
+      </li>
+      <li class="inline-block mr-4 xl:mr-8 2xl:mr-12 my-2">
+        <a class="whitespace-nowrap" href="/#project">About Project</a>
+      </li>
+      <li class="inline-block mr-4 xl:mr-8 2xl:mr-12 my-2">
+        <a class="whitespace-nowrap" href="/#utilities">Utilities</a>
+      </li>
+      <li class="inline-block mr-4 xl:mr-8 2xl:mr-12 my-2">
+        <a class="whitespace-nowrap" href="/#rarities">Rarities</a>
+      </li>
+      <li class="inline-block mr-4 xl:mr-8 2xl:mr-12 my-2">
+        <a class="whitespace-nowrap" href="/#roadmap">Roadmap</a>
+      </li>
+      <li class="inline-block mr-4 xl:mr-8 2xl:mr-12 my-2">
+        <a class="whitespace-nowrap" href="/#team">Team</a>
+      </li>
+      <li class="inline-block mr-4 xl:mr-8 2xl:mr-12 my-2">
+        <a class="whitespace-nowrap" href="/#faq">FAQ</a>
+      </li>
+      <li class="inline-block my-2">
+        <a class="whitespace-nowrap" href="/#community">Community</a>
+      </li>
+    </ul>
 	</footer>
 </template>
-
-<script>
-export default {
-	name: 'Footer',
-}
-</script>
-
-<style
-	lang="scss"
-	scoped></style>

@@ -14,6 +14,7 @@
 			<TeamSection />
 			<FaqSection />
 			<CommunitySection />
+			<Footer />
 		</main>
 	</div>
 </template>
