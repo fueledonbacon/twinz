@@ -5,13 +5,16 @@
 		<main class="w-full">
 			<HeroOpSection />
 			<StorySection />
-			<NewspaperSection />
+			<WhitepaperSection />
 			<ProjectSection />
 			<UtilitiesSection />
 			<FeaturesSection />
 			<RaritiesSection />
 			<RoadmapSection />
+			<TeamSection />
 			<FaqSection />
+			<CommunitySection />
+			<Footer />
 		</main>
 	</div>
 </template>

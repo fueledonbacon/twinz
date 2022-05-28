@@ -1,5 +1,7 @@
 <template>
-	<div class="relative py-16">
+	<section
+		id="roadmap"
+		class="relative py-16">
 		<img
 			class="absolute top-[25%] right-0 w-1/4 min-w-[120px] max-w-[250px]"
 			src="@/assets/images/roadmap-1.png"
@@ -14,11 +16,10 @@
 			alt="Sakura" />
 		<div class="container mx-auto px-8">
 			<div class="mb-2 text-xl">ロードマップ</div>
-			<div class="mb-10 mb-8 text-6xl font-bold uppercase lg:text-7xl">
+			<div class="mb-10 mb-8 text-6xl font-bold md:text-7xl xl:text-8xl">
 				Roadmap
 			</div>
-			<div
-				class="mb-12 flex flex-col text-lg font-bold uppercase sm:flex-row md:text-2xl">
+			<div class="mb-12 flex flex-col text-lg font-bold sm:flex-row md:text-2xl">
 				<div class="mb-4 w-full text-neutral-400 sm:mb-0 sm:w-1/2 sm:pr-4">
 					An Extensive Roadmap was created to ensure a detailed buildout supporting
 					the community and increasing value for the NFT.
@@ -36,7 +37,7 @@
 					'bg-primary': !idx,
 					'bg-neutral-400/10 backdrop-blur-md': idx,
 				}">
-				<div class="mb-5 w-full text-xl font-bold uppercase sm:text-4xl md:w-2/5">
+				<div class="mb-5 w-full text-xl font-bold sm:text-4xl md:w-2/5">
 					<div class="lg:w-2/3">
 						<span class="inline-block whitespace-nowrap">
 							{{ todo.title }} -&nbsp;
@@ -44,12 +45,12 @@
 						<span class="inline-block whitespace-nowrap"> {{ todo.period }} </span>
 					</div>
 				</div>
-				<div class="w-full text-sm sm:text-lg md:w-3/5">
+				<div class="font-lato w-full text-sm sm:text-lg md:w-3/5">
 					{{ todo.todo }}
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>

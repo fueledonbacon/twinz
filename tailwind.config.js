@@ -9,7 +9,8 @@ module.exports = {
       },
       backgroundImage: {
         'hero': 'url(@/assets/images/about-bg.jpg)',
-        'utilities': 'url(@/assets/images/utilities-bg.jpg)'
+        'utilities': 'url(@/assets/images/utilities-bg.jpg)',
+        'community': 'url(@/assets/images/community-bg.jpg)'
       }
     },
   },
