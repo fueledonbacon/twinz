@@ -13,6 +13,7 @@
 			<RoadmapSection />
 			<TeamSection />
 			<FaqSection />
+			<CommunitySection />
 		</main>
 	</div>
 </template>
