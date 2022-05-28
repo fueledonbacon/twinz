@@ -10,15 +10,8 @@
 			<UtilitiesSection />
 			<FeaturesSection />
 			<RaritiesSection />
+			<RoadmapSection />
 			<FaqSection />
 		</main>
 	</div>
 </template>
-<script>
-export default {
-	name: 'Test',
-	data() {
-		return {}
-	},
-}
-</script>

@@ -9,25 +9,25 @@
 			<!-- Desktop nav -->
 			<nav class="hidden lg:flex">
 				<ul class="flex items-center text-sm font-bold uppercase text-white">
-					<li class="mr-8">
+					<li class="mr-4 xl:mr-8 2xl:mr-12">
 						<a href="/#story">Story</a>
 					</li>
-					<li class="mr-8">
+					<li class="mr-4 xl:mr-8 2xl:mr-12">
 						<a href="/#project">About Project</a>
 					</li>
-					<li class="mr-8">
+					<li class="mr-4 xl:mr-8 2xl:mr-12">
 						<a href="/#utilities">Utilities</a>
 					</li>
-					<li class="mr-8">
+					<li class="mr-4 xl:mr-8 2xl:mr-12">
 						<a href="/#rarities">Rarities</a>
 					</li>
-					<li class="mr-8">
+					<li class="mr-4 xl:mr-8 2xl:mr-12">
 						<a href="/#roadmap">Roadmap</a>
 					</li>
-					<li class="mr-8">
+					<li class="mr-4 xl:mr-8 2xl:mr-12">
 						<a href="/#team">Team</a>
 					</li>
-					<li class="mr-8">
+					<li class="mr-4 xl:mr-8 2xl:mr-12">
 						<a href="/#faq">FAQ</a>
 					</li>
 					<li>
