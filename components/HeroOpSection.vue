@@ -40,7 +40,7 @@
 							Learn more
 						</a>
 						<a
-							class="w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary">
+							class="w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary duration-300 hover:bg-primary hover:text-white">
 							Join to Discord
 						</a>
 					</div>
