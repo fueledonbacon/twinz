@@ -14,7 +14,7 @@
 			alt="Sakura" />
 		<div class="container mx-auto px-8">
 			<div class="mb-2 text-xl">ロードマップ</div>
-			<div class="mb-10 mb-8 text-6xl font-bold uppercase lg:text-7xl">
+			<div class="mb-10 mb-8 text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
 				Roadmap
 			</div>
 			<div

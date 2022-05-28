@@ -6,7 +6,10 @@
 			alt="Sakura" />
 		<div class="container relative mx-auto px-8">
 			<div class="mb-2 text-xl">チーム</div>
-			<div class="mb-10 mb-12 text-6xl font-bold uppercase lg:text-7xl">Team</div>
+			<div
+				class="mb-10 mb-12 text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
+				Team
+			</div>
 			<div class="flex flex-wrap">
 				<div
 					v-for="(member, idx) in team"

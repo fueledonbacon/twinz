@@ -3,7 +3,9 @@
 		<div class="container mx-auto flex flex-col px-8 pt-40 pb-20 lg:flex-row">
 			<div class="mb-16 w-full lg:mb-0 lg:w-1/2 lg:pr-20 lg:pr-32">
 				<div class="mb-2 text-neutral-500">ストラテジー</div>
-				<div class="mb-10 text-8xl font-bold uppercase">Utilities</div>
+				<div class="mb-10 text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
+					Utilities
+				</div>
 				<div class="text-light">
 					Anyone owning a TwinZ NFT will be part of a unique club invited to
 					participate in exclusive community IRL and Metaverse Events. All TwinZ are

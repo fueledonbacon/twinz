@@ -7,7 +7,8 @@
 		<div class="container mx-auto px-8">
 			<div class="mb-2 text-xl">ストラテジー</div>
 			<div class="mb-10 flex flex-col md:flex-row">
-				<div class="mb-4 text-6xl font-bold uppercase md:mb-0 md:w-2/5 lg:text-7xl">
+				<div
+					class="mb-4 text-6xl font-bold uppercase md:mb-0 md:w-2/5 md:text-7xl xl:text-8xl">
 					Rarities
 				</div>
 				<div class="text-lg text-light md:w-3/5">
