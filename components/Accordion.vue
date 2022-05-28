@@ -1,17 +1,17 @@
 <template>
-	<div class="space-y-5">
+	<div class="border-t border-neutral-400">
 		<div
 			v
 			v-for="(item, index) in items"
 			:class="[index === openItemIndex ? 'opened' : '']"
 			:key="`question_${index}`"
-			class="faq-item relative select-none overflow-hidden rounded-lg border-2 border-gray-200">
+			class="faq-item relative select-none overflow-hidden border-b border-neutral-400">
 			<h4
 				@click="toggleAnswer(index)"
-				class="flex cursor-pointer items-center justify-between px-7 py-7 text-lg font-medium text-gray-200 hover:text-gray-400 sm:text-xl">
+				class="flex cursor-pointer items-center justify-between py-7 text-lg font-medium text-white hover:text-neutral-400 sm:text-2xl">
 				<span>{{ item.title }}</span>
 				<svg
-					class="h-6 w-6 rotate-0 transform transition-all duration-200 ease-out"
+					class="h-8 w-8 rotate-0 transform text-primary transition-all duration-200 ease-out"
 					fill="none"
 					stroke="currentColor"
 					viewBox="0 0 24 24"
@@ -23,7 +23,7 @@
 						d="M12 6v6m0 0v6m0-6h6m-6 0H6"></path>
 				</svg>
 			</h4>
-			<p class="-mt-2 hidden py-7 px-7 pt-0 text-gray-400 sm:text-lg">
+			<p class="-mt-2 hidden pb-7 text-light sm:text-lg">
 				{{ item.description }}
 			</p>
 		</div>

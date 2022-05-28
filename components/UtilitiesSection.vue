@@ -1,6 +1,6 @@
 <template>
 	<div class="relative bg-utilities bg-cover bg-bottom bg-no-repeat">
-		<div class="container mx-auto flex flex-col px-8 py-40 lg:flex-row">
+		<div class="container mx-auto flex flex-col px-8 pt-40 pb-20 lg:flex-row">
 			<div class="mb-16 w-full lg:mb-0 lg:w-1/2 lg:pr-20 lg:pr-32">
 				<div class="mb-2 text-neutral-500">ストラテジー</div>
 				<div class="mb-10 text-8xl font-bold uppercase">Utilities</div>

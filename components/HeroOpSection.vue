@@ -1,11 +1,11 @@
 <template>
 	<div class="relative">
 		<img
-			class="absolute top-10 right-0 w-1/3 md:z-10"
+			class="absolute top-10 right-0 w-1/3 max-w-[400px] md:z-10"
 			src="@/assets/images/hero-1.png"
 			alt="Sakura" />
 		<img
-			class="absolute bottom-[15%] left-0 w-1/5"
+			class="absolute bottom-[15%] left-0 w-1/5 max-w-[300px]"
 			src="@/assets/images/hero-2.png"
 			alt="Sakura" />
 		<div class="container mx-auto px-8 pt-36 pb-16 md:pt-60 md:pb-24">
@@ -34,11 +34,11 @@
 					</div>
 					<div class="flex flex-col items-center sm:flex-row">
 						<a
-							class="mb-4 inline-flex w-60 border border-solid border-primary bg-primary px-9 py-5 font-bold sm:mb-0 sm:mr-8">
+							class="mb-4 inline-flex w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8">
 							Learn more
 						</a>
 						<a
-							class="inline-flex w-60 border border-solid border-primary px-9 py-5 font-bold text-primary">
+							class="inline-flex w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary">
 							Join to Discord
 						</a>
 					</div>
