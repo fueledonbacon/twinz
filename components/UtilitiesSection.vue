@@ -1,5 +1,7 @@
 <template>
-	<div class="relative bg-utilities bg-cover bg-bottom bg-no-repeat">
+	<section
+		id="utilities"
+		class="relative bg-utilities bg-cover bg-bottom bg-no-repeat">
 		<div class="container mx-auto flex flex-col px-8 pt-40 pb-20 lg:flex-row">
 			<div class="mb-16 w-full lg:mb-0 lg:w-1/2 lg:pr-20 lg:pr-32">
 				<div class="mb-2 text-neutral-500">ストラテジー</div>
@@ -88,5 +90,5 @@
 		</div>
 		<div
 			class="absolute top-0 right-1/2 h-16 w-16 translate-y-[-50%] rounded-full bg-primary" />
-	</div>
+	</section>
 </template>

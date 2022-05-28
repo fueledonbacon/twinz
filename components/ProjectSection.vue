@@ -1,5 +1,5 @@
 <template>
-	<div>
+	<section id="project">
 		<div class="relative px-8 py-32">
 			<img
 				class="absolute top-0 right-0 w-2/5 max-w-[500px]"
@@ -104,5 +104,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>

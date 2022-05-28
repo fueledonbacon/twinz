@@ -1,5 +1,7 @@
 <template>
-	<div class="relative py-16">
+	<section
+		id="roadmap"
+		class="relative py-16">
 		<img
 			class="absolute top-[25%] right-0 w-1/4 min-w-[120px] max-w-[250px]"
 			src="@/assets/images/roadmap-1.png"
@@ -49,7 +51,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>

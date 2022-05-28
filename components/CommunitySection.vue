@@ -1,9 +1,11 @@
 <template>
-	<div class="relative bg-community bg-cover bg-bottom bg-no-repeat">
+	<section
+		id="community"
+		class="relative bg-community bg-cover bg-bottom bg-no-repeat">
 		<div class="container mx-auto px-8 pt-40 pb-12">
 			<div class="mb-2 text-neutral-500">コミュニティ</div>
 			<div
-				class="mb-10 mb-16 max-w-[960px] text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
+				class="mb-10 mb-16 max-w-[960px] text-4xl sm:text-6xl font-bold uppercase md:text-7xl xl:text-8xl">
 				Commitment to Community
 			</div>
 			<div class="mb-16 flex flex-col text-lg text-light lg:flex-row">
@@ -33,5 +35,5 @@
 				</a>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>

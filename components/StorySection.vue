@@ -1,5 +1,7 @@
 <template>
-	<div class="bg-hero bg-cover bg-bottom bg-no-repeat">
+	<section
+		id="story"
+		class="bg-hero bg-cover bg-bottom bg-no-repeat">
 		<div class="container mx-auto px-8 py-24 xl:py-32">
 			<div class="mb-2 text-xl">物語</div>
 			<div class="mb-10 text-6xl font-bold md:text-7xl xl:text-8xl">
@@ -33,5 +35,5 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>

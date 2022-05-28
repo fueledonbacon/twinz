@@ -1,5 +1,6 @@
 <template>
 	<header
+		id="header"
 		class="fixed z-50 flex w-full items-center justify-center bg-dark px-8 py-5"
 		:class="scrollY < 1 ? 'sm:bg-transparent' : 'backdrop-blur-md sm:bg-dark/75'">
 		<ConnectModal />

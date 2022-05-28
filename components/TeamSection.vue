@@ -1,5 +1,7 @@
 <template>
-	<div class="relative">
+	<section
+		id="team"
+		class="relative">
 		<img
 			class="absolute top-[35%] left-0 w-2/3 max-w-[960px]"
 			src="@/assets/images/team-7.svg"
@@ -34,7 +36,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>

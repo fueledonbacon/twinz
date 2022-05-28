@@ -1,5 +1,7 @@
 <template>
-	<div class="relative py-16">
+	<section
+		id="features"
+		class="relative py-16">
 		<img
 			class="absolute bottom-0 right-0 w-1/5 min-w-[240px] max-w-[300px]"
 			src="@/assets/images/features-1.png"
@@ -125,7 +127,7 @@
 				</div>
 			</Carousel>
 		</div>
-	</div>
+	</section>
 </template>
 
 <script>

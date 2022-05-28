@@ -1,5 +1,7 @@
 <template>
-	<section class="relative py-16">
+	<section
+		id="rarities"
+		class="relative py-16">
 		<img
 			class="absolute bottom-[-10vw] left-0 w-1/3 max-w-[450px]"
 			src="@/assets/images/rarities-2.png"
