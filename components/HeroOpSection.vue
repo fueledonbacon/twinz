@@ -26,25 +26,27 @@
 						src="@/assets/images/hero-gate.svg"
 						alt="Gate" />
 				</div>
-				<div class="w-100 relative uppercase lg:w-3/5">
-					<div class="mb-2 text-2xl font-bold text-light">Twinz NFT</div>
-					<div class="mb-8 text-4xl font-bold sm:text-5xl md:text-7xl">
+				<div class="w-100 relative lg:w-3/5">
+					<div class="mb-2 font-bold italic text-light">
+						Come Join The TwinZ Community
+					</div>
+					<div class="mb-8 text-4xl font-bold sm:text-5xl md:text-6xl">
 						Double the fun with double the rewards Because
 						<span class="text-primary">Twin</span>ning is winning!
 					</div>
 					<div class="flex flex-col items-center sm:flex-row">
 						<a
-							class="mb-4 inline-flex w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8">
+							class="mb-4 w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8">
 							Learn more
 						</a>
 						<a
-							class="inline-flex w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary">
+							class="w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary duration-300 hover:bg-primary hover:text-white">
 							Join to Discord
 						</a>
 					</div>
 				</div>
 			</div>
-			<div class="z-1 relative flex flex-col text-light sm:flex-row">
+			<div class="z-1 font-lato relative flex flex-col text-light sm:flex-row">
 				<div class="mb-4 border-l-4 border-l-primary px-6 py-2 sm:mb-0 sm:w-1/3">
 					<div class="max-w-2/3">
 						TwinZ is a collection of 10,000 digital individuals living as NFTs
