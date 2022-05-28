@@ -11,6 +11,7 @@
 			<FeaturesSection />
 			<RaritiesSection />
 			<RoadmapSection />
+			<TeamSection />
 			<FaqSection />
 		</main>
 	</div>
