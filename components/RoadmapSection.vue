@@ -34,6 +34,7 @@
 				:key="todo.title"
 				class="mb-8"
 				:data="todo"
+				:always-active="idx === 0"
 			/>
 		</div>
 	</section>

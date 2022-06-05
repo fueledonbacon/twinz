@@ -3,8 +3,8 @@
     ref="block"
     class="relative flex flex-col rounded-tr-3xl px-8 pt-4 pb-6 sm:rounded-tr-[150px] sm:px-24 sm:pt-16 sm:pb-20 md:flex-row duration-300"
     :class="{
-      'bg-primary': active,
-      'bg-neutral-400/10 backdrop-blur-md': !active,
+      'bg-primary': alwaysActive || active,
+      'bg-neutral-400/10 backdrop-blur-md': !(alwaysActive || active),
     }">
     <div class="mb-5 w-full text-xl font-bold sm:text-4xl md:w-2/5">
       <div class="lg:w-2/3">
@@ -29,6 +29,10 @@ export default {
     data: {
       type: Object,
       default: () => ({})
+    },
+    alwaysActive: {
+      type: Boolean,
+      default: false
     }
   },
   mounted () {
@@ -42,7 +46,7 @@ export default {
       if (!this.$refs.block) { return }
 
       const { top, bottom } = this.$refs.block.getBoundingClientRect()
-      this.active = (top < 150) && (bottom > 100)
+      this.active = top < 150
     }
   }
 }
