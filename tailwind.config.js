@@ -1,5 +1,8 @@
 module.exports = {
   content: [],
+  safelist: [
+    'bg-primary'
+  ],
   theme: {
     extend: {
       colors: {

@@ -55,7 +55,7 @@
 					<div
 						class="relative rounded-tr-[150px] bg-neutral-500/20 p-10 pr-16 backdrop-blur-sm">
 						<div class="mb-5 text-3xl font-bold">
-							<span class="text-primary">Fractternal</span> Twinz
+							<span class="text-primary">Fraternal</span> Twinz
 						</div>
 						<div class="font-lato text-light">
 							Anyone owning a set of Fraternal Twins that have been confirmed and
