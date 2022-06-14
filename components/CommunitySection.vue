@@ -31,7 +31,7 @@
 			</div>
 			<div>
 				<a class="w-60 bg-primary px-6 py-5 text-center font-bold">
-					Join to Discord
+					Discord Open Soon
 				</a>
 			</div>
 		</div>
