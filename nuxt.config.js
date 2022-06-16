@@ -1,6 +1,6 @@
 import getSiteMeta from './utils/siteMeta'
 //Place rute to abi artifacs
-import { abi } from  './artifacts/contracts/TheMutantMushies.sol/TheMutantMushies.json'
+import { abi } from './artifacts/contracts/TheMutantMushies.sol/TheMutantMushies.json'
 
 export default {
 	// Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -11,18 +11,18 @@ export default {
 
 	publicRuntimeConfig: {
 		smartContract: {
-			contractName: "ContractName",
-			name: "Contract Name",
-			symbol: "XYZ",
-			address: "0x...123",
+			contractName: 'ContractName',
+			name: 'Contract Name',
+			symbol: 'XYZ',
+			address: '0x...123',
 			collectionSize: 0,
 			mintPrice: 0.1,
 			chainId: 1,
 			hasWhitelist: false,
 			hasDelayedReveal: false,
-			abi: abi
-		}
-	},	// Global page headers: https://go.nuxtjs.dev/config-head
+			abi: abi,
+		},
+	}, // Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
 		title: 'Twinz NFT',
 		htmlAttrs: {
@@ -33,9 +33,10 @@ export default {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' }, // mobile responsive https://search.google.com/test/mobile-friendly
 			{ name: 'format-detection', content: 'telephone=no' },
 			...getSiteMeta({
-				url: 'nft-template.fueledonbacon.com' ,
+				url: 'twinz.fueledonbacon.co',
 				title: 'Twinz NFT',
-				description: 'This is the nft template',
+				description:
+					'A 10,000 NFT collection on Ethereum Blockchain. Manga driven art for Anime community built in Web3 for unique and rewarding IRL and Metaverse experiences.',
 				mainImage: '/mainBanner.png',
 			}),
 		],
@@ -48,27 +49,23 @@ export default {
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{
 				rel: 'stylesheet',
-				href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Questrial&family=Roboto:wght@400;500;700;900&display=swap',
+				href:
+					'https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700&family=Questrial&family=Roboto:wght@400;500;700;900&display=swap',
 			},
 		],
 		script: [
 			{
 				src: 'https://identity.netlify.com/v1/netlify-identity-widget.js',
-				src: 'https://kit.fontawesome.com/43d7c4e320.js'
+				src: 'https://kit.fontawesome.com/43d7c4e320.js',
 			},
 		],
 	},
 
 	// Global CSS: https://go.nuxtjs.dev/config-css
-	css: [
-		'@fortawesome/fontawesome-svg-core/styles.css'
-
-	],
+	css: ['@fortawesome/fontawesome-svg-core/styles.css'],
 
 	// Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-	plugins: [
-		'@/plugins/wallet',
-	],
+	plugins: ['@/plugins/wallet'],
 
 	// Auto import components: https://go.nuxtjs.dev/config-components
 	components: true,
@@ -78,7 +75,7 @@ export default {
 		'nuxt-vite',
 		'@nuxtjs/tailwindcss',
 		'@nuxtjs/fontawesome',
-		'@nuxtjs/dotenv'
+		'@nuxtjs/dotenv',
 	],
 
 	// Modules: https://go.nuxtjs.dev/config-modules
@@ -86,11 +83,11 @@ export default {
 		// https://go.nuxtjs.dev/bootstrap
 		'@nuxtjs/sitemap',
 		'@nuxtjs/axios',
-		'@nuxtjs/toast'
+		'@nuxtjs/toast',
 	],
 
 	toast: {
-		position: 'top-center'
+		position: 'top-center',
 	},
 
 	sitemap: {
@@ -111,16 +108,14 @@ export default {
 		injectPosition: 0,
 		viewer: true,
 	},
-	fontawesome:{
-		icons:{
+	fontawesome: {
+		icons: {
 			solid: true,
-			brands: true
-		}
+			brands: true,
+		},
 	},
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
-		transpile:[
-			'web3modal-vue'
-		]
+		transpile: ['web3modal-vue'],
 	},
 }
