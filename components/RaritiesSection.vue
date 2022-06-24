@@ -52,11 +52,11 @@
 </template>
 
 <script>
-import CreatorzImage from '@/assets/images/rarities-1.jpg'
-import EntertainerzImage from '@/assets/images/rarities-2.jpg'
-import GeniuzImage from '@/assets/images/rarities-3.jpg'
-import HighRollerzImage from '@/assets/images/rarities-4.jpg'
-import WarriorzImage from '@/assets/images/rarities-5.jpg'
+import CreatorzImage from '@/assets/images/_rarities-1.jpeg'
+import EntertainerzImage from '@/assets/images/_rarities-2.jpeg'
+import GeniuzImage from '@/assets/images/_rarities-3.jpeg'
+import HighRollerzImage from '@/assets/images/_rarities-4.jpeg'
+import WarriorzImage from '@/assets/images/_rarities-5.jpeg'
 
 const carouselData = [
 	{ image: HighRollerzImage, name: "High Roller", description: "The wealthiest and most powerful" },
