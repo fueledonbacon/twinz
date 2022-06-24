@@ -37,10 +37,10 @@
 							<div class="max-w-[280px] sm:max-w-full">
 								<div class="mb-3 lg:mb-5 text-xl text-light lg:text-2xl">クリエーター</div>
 								<div class="mb-6 lg:mb-8 text-2xl font-bold text-dark lg:text-4xl">
-									Creator<span class="text-primary">Z</span>
+									{{ slide.name }}<span class="text-primary">Z</span>
 								</div>
 								<div class="text-lg font-bold text-neutral-400 lg:text-2xl">
-									The most creative artist, designers and developers
+									{{ slide.description }}
 								</div>
 							</div>
 						</div>
@@ -52,18 +52,18 @@
 </template>
 
 <script>
-import CarouselImage1 from '@/assets/images/rarities-1.jpg'
-import CarouselImage2 from '@/assets/images/rarities-2.jpg'
-import CarouselImage3 from '@/assets/images/rarities-3.jpg'
-import CarouselImage4 from '@/assets/images/rarities-4.jpg'
-import CarouselImage5 from '@/assets/images/rarities-5.jpg'
+import CreatorzImage from '@/assets/images/rarities-1.jpg'
+import EntertainerzImage from '@/assets/images/rarities-2.jpg'
+import GeniuzImage from '@/assets/images/rarities-3.jpg'
+import HighRollerzImage from '@/assets/images/rarities-4.jpg'
+import WarriorzImage from '@/assets/images/rarities-5.jpg'
 
 const carouselData = [
-	{ image: CarouselImage1 },
-	{ image: CarouselImage2 },
-	{ image: CarouselImage3 },
-	{ image: CarouselImage4 },
-	{ image: CarouselImage5 }
+	{ image: HighRollerzImage, name: "High Roller", description: "The wealthiest and most powerful" },
+	{ image: CreatorzImage, name: "Creator", description: "The most creative artist, designers, and developers" },
+	{ image: WarriorzImage, name: "Warrior", description: "The strongest athletes and warriors" },
+	{ image: EntertainerzImage, name: "Entertainer", description: "The most famous actors, comedians, dancers, directors, and singers" },
+	{ image: GeniuzImage, name: "Geniu", description: "The smartest minds in chemistry, economics, medicine, and physics" }
 ]
 
 export default {
