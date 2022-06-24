@@ -29,34 +29,23 @@
 					opportunities through social, artistic and entertainment channels.
 				</div>
 			</div>
-			<div
+			<RoadmapPhase
 				v-for="(todo, idx) in roadmap"
 				:key="todo.title"
-				class="mb-8 flex flex-col rounded-tr-3xl px-8 pt-4 pb-6 sm:rounded-tr-[150px] sm:px-24 sm:pt-16 sm:pb-20 md:flex-row"
-				:class="{
-					'bg-primary': !idx,
-					'bg-neutral-400/10 backdrop-blur-md': idx,
-				}">
-				<div class="mb-5 w-full text-xl font-bold sm:text-4xl md:w-2/5">
-					<div class="lg:w-2/3">
-						<span class="inline-block whitespace-nowrap">
-							{{ todo.title }} -&nbsp;
-						</span>
-						<span class="inline-block whitespace-nowrap"> {{ todo.period }} </span>
-					</div>
-				</div>
-				<div class="font-lato w-full text-sm sm:text-lg md:w-3/5">
-					{{ todo.todo }}
-				</div>
-			</div>
+				class="mb-8"
+				:data="todo"
+				:always-active="idx === 0"
+			/>
 		</div>
 	</section>
 </template>
 
 <script>
 import roadmap from '@/assets/json/roadmap.json'
+import RoadmapPhase from './RoadmapPhase.vue'
 
 export default {
-	data: () => ({ roadmap }),
+    data: () => ({ roadmap }),
+    components: { RoadmapPhase }
 }
 </script>
