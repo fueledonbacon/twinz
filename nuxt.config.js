@@ -1,6 +1,6 @@
 import getSiteMeta from './utils/siteMeta'
-//Place rute to abi artifacs
-import { abi } from './artifacts/contracts/TheMutantMushies.sol/TheMutantMushies.json'
+// Place rute to abi artifacs
+// import { abi } from './artifacts/contracts/TheMutantMushies.sol/TheMutantMushies.json'
 
 export default {
 	// Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -11,8 +11,8 @@ export default {
 
 	publicRuntimeConfig: {
 		smartContract: {
-			contractName: 'ContractName',
-			name: 'Contract Name',
+			contractName: 'TwinzNFT',
+			name: 'Twinz',
 			symbol: 'XYZ',
 			address: '0x...123',
 			collectionSize: 0,
@@ -20,7 +20,7 @@ export default {
 			chainId: 1,
 			hasWhitelist: false,
 			hasDelayedReveal: false,
-			abi: abi,
+			abi: {}
 		},
 	}, // Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
@@ -33,10 +33,10 @@ export default {
 			{ name: 'viewport', content: 'width=device-width, initial-scale=1' }, // mobile responsive https://search.google.com/test/mobile-friendly
 			{ name: 'format-detection', content: 'telephone=no' },
 			...getSiteMeta({
-				url: 'twinz.fueledonbacon.co',
+				url: 'https://twinznft.com',
 				title: 'Twinz NFT',
 				description:
-					'A 10,000 NFT collection on Ethereum Blockchain. Manga driven art for Anime community built in Web3 for unique and rewarding IRL and Metaverse experiences.',
+					'A 10,000 NFT collection on Ethereum Blockchain. Manga driven art for Anime community built in Web3 for unique and rewarding IRL and Metaverse experience.',
 				mainImage: '/mainBanner.png',
 			}),
 		],
@@ -44,7 +44,7 @@ export default {
 			{
 				hid: 'canonical',
 				rel: 'canonical',
-				href: 'nft-template.fueledonbacon.com',
+				href: 'twinznft.com',
 			},
 			{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
 			{
@@ -91,7 +91,7 @@ export default {
 	},
 
 	sitemap: {
-		hostname: 'http://web3template.fueledonbacon.com',
+		hostname: 'http://twinznft.com',
 		exclude: ['/admin/**'],
 		defaults: {
 			changefreq: 'daily',
