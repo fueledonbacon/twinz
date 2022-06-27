@@ -1,5 +1,4 @@
-# NFT Launch Template
-
+# Twinz NFT Site
 ## Build Setup
 
 Uses Vite, so modules only, do not use require statements, they won't work.
