@@ -1,5 +1,5 @@
 import getSiteMeta from './utils/siteMeta'
-//Place rute to abi artifacs
+// Place rute to abi artifacs
 // import { abi } from './artifacts/contracts/TheMutantMushies.sol/TheMutantMushies.json'
 
 export default {
@@ -20,7 +20,7 @@ export default {
 			chainId: 1,
 			hasWhitelist: false,
 			hasDelayedReveal: false,
-			abi: {},
+			abi: {}
 		},
 	}, // Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
