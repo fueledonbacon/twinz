@@ -30,7 +30,7 @@
 						alt="TWinz Collection" />
 					<div class="mt-8 w-full md:mt-0 md:w-3/5 md:pl-8 lg:w-2/5 xl:w-3/5">
 						<div class="mb-8 text-2xl font-bold lg:text-3xl">
-							Twinz is a collection of 10,1000 digital individuals living as NFTs
+							Twinz is a collection of 10,000 digital individuals living as NFTs
 							stored as an ERC-721 on the Ethereum Blockchain.
 						</div>
 						<div class="font-lato text-light">
