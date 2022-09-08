@@ -1,31 +1,32 @@
-require('dotenv').config();
-const updateEnv = require('./updateEnv.js');
-const updateSiteConfig = require('./updateSiteConfig.js');
+const { ethers } = require('hardhat');
+const util = require('util');
+const exec = util.promisify(require('child_process').exec);
+
+const args = require("./arguments")
+const path = "./scripts/arguments.js";
+const NETWORK = "rinkeby"
 
 async function main() {
-  const contractFactory = await ethers.getContractFactory("TheMutantMushies")
 
-  const [deployer] = await ethers.getSigners();
+  const Contract = await ethers.getContractFactory("Twinz");
+  const contract = await Contract.deploy(...args)
+  await contract.deployed();
+  console.log("Twinz contract deployed to address:", contract.address)
 
-  console.log("Deploying contracts with the account:", deployer.address);
+  console.log("Waiting for one minute for contract propagation")
+  await new Promise(r => setTimeout(r, 60000));
+  await verify(contract.address, path)
+}
 
-  console.log("Account balance:", (await deployer.getBalance()).toString());
-
-  const { HIDDEN_METADATA_CID, VOUCHER_SIGNER_PUBLIC_KEY } = process.env;
-  
-  const delayedRevealUri = `ipfs://${HIDDEN_METADATA_CID}`
-  const paymentsReceiver = VOUCHER_SIGNER_PUBLIC_KEY
-
-  const contract = await contractFactory.deploy(delayedRevealUri, paymentsReceiver)
-
-  const envUpdate = {
-    'CONTRACT_ADDRESS': contract.address
+async function verify(address, path) {
+  console.log("Start contract verification")
+  try {
+    const { stdout, stderr } = await exec(`npx hardhat verify ${address} --network ${NETWORK} --constructor-args ${path} `);
+    if(stderr) return console.log('stderr:', stderr);
+    console.log('stdout:', stdout);
+  } catch (e) {
+    console.error(e); // should contain code (exit code) and signal (that caused the termination).
   }
-
-  updateEnv(envUpdate)
-  updateSiteConfig(contract.address)
-      
-  console.log("Contract deployed to address:", contract.address)
 }
   
   main()
