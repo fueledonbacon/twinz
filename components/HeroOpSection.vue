@@ -57,7 +57,6 @@
 import { generateProof } from '@/utils/merkle-proof'
 import whitelistAddresses from '@/assets/json/addresses.json'
 import { getParsedEthersError } from "@enzoferey/ethers-error-parser";
-import { capitalCase } from 'change-case'
 
 export default {
 	name: 'HeroOpSection',
@@ -78,9 +77,7 @@ export default {
 					},
 				})
 			} catch (e) {
-				console.error("whitelistMint error")
 				let message = "Something went wrong! "
-				
 				try {
 					const { context } = getParsedEthersError(e);
 					switch(context){
@@ -92,7 +89,6 @@ export default {
 					}
 
 				} catch (e) {
-					console.error("error parsing error")
 					console.debug(e)
 				}
 

@@ -20,10 +20,14 @@ contract Twinz is ERC721A, Ownable {
     uint256 private constant _MAX_WHITELIST_MINT = 90;
     
     uint256 public price;
+    uint256 public startSaleTime;
+    uint256 public endSaleTime;
+    
     string private _baseUri;
 
     bytes32 private _whitelistMerkleRoot;
     bool public whitelistFinished;
+    bool public salePeriodOverride = false;
     mapping(address => bool) public userHasMinted;
 
     constructor(
@@ -38,6 +42,22 @@ contract Twinz is ERC721A, Ownable {
         _whitelistMerkleRoot = whitelistMerkleRoot;
         _baseUri = baseUri;
         price = price_;
+    }
+
+    function setStartTime(uint startTime) external onlyOwner {
+       startSaleTime = startTime;
+    }
+
+    function setEndTime(uint endTime) external onlyOwner {
+        require(endTime > startSaleTime, "END_LESS_THAN_START");
+        endSaleTime = endTime;
+    }
+
+    function saleIsActive() public view returns (bool) {
+        if(salePeriodOverride) {
+            return true;
+        }
+        return block.timestamp >= startSaleTime && block.timestamp <= endSaleTime;
     }
 
     function setPrice(uint256 price_) external onlyOwner {
@@ -60,6 +80,10 @@ contract Twinz is ERC721A, Ownable {
         whitelistFinished = !whitelistFinished;
     }
 
+    function toggleSalePeriodOverride() external onlyOwner {
+        salePeriodOverride = !salePeriodOverride;
+    }
+
     /// @dev override base uri. It will be combined with token ID
     function _baseURI() internal view override returns (string memory) {
         return _baseUri;
@@ -70,6 +94,7 @@ contract Twinz is ERC721A, Ownable {
     }
     
     function whitelistMint(bytes32[] calldata _merkleProof) external payable {
+        require(saleIsActive(), "SALE_NOT_ACTIVE");
         require(!whitelistFinished, "WHITELIST_FINISHED");
         require(totalSupply() + 1 <= _MAX_WHITELIST_MINT, "MAX_WHITELIST_MINT_REACHED");
         address account = _msgSender();
@@ -78,6 +103,8 @@ contract Twinz is ERC721A, Ownable {
     }
 
     function publicMint() external payable {
+        require(saleIsActive(), "SALE_NOT_ACTIVE");
+        require(!whitelistFinished, "WHITELIST_FINISHED");
         require(whitelistFinished, "WHITELIST_NOT_YET_FINISHED");
         require(totalSupply() + 1 <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
         _mint(_msgSender());
