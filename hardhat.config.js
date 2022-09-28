@@ -55,5 +55,13 @@ module.exports = {
     runOnCompile: true,
     strict: true,
     only: [],
+  },
+  abiExporter: {
+    path: './abi',
+    runOnCompile: true,
+    flat: true,
+    // only: [],
+    spacing: 2,
+    pretty: true
   }
 };

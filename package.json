@@ -7,6 +7,7 @@
     "build": "nuxt build",
     "start": "nuxt start",
     "generate": "nuxt generate --fail-on-error",
+    "compile-contracts": "npx hardhat compile",
     "format-all": "prettier --write \"**/*.vue\""
   },
   "dependencies": {
@@ -43,6 +44,7 @@
     "eslint-config-prettier": "^8.3.0",
     "ethereum-waffle": "^3.4.0",
     "hardhat": "^2.6.8",
+    "hardhat-abi-exporter": "^2.10.0",
     "hardhat-contract-sizer": "^2.6.1",
     "prettier": "^2.6.2",
     "prettier-plugin-tailwindcss": "^0.1.11",
