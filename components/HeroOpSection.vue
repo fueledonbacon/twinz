@@ -21,7 +21,11 @@
 						We're now minting <span class="text-primary">Founder's Pass</span> NFTs!
 					</div>
 					<div class="flex flex-col items-center sm:flex-row">
-						<a @click.prevent="mintNft"
+						<a v-if="whitelistFinished" @click.prevent="publicMint"
+							class="mb-4 w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8 hover:cursor-pointer">
+							Public Mint
+						</a>
+						<a v-else @click.prevent="whitelistMint"
 							class="mb-4 w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8 hover:cursor-pointer">
 							Whitelist Mint
 						</a>
@@ -59,8 +63,68 @@ import { getParsedEthersError } from "@enzoferey/ethers-error-parser";
 
 export default {
 	name: 'HeroOpSection',
+	async mounted(){
+		try{
+			const contract = await this.$wallet.getContract()
+			this.whitelistFinished = await contract.whitelistFinished()
+		} catch(e){
+			try{
+				const { context } = getParsedEthersError(e);
+				console.log(context)
+			} catch(e){
+				console.log(e)
+			}
+		}
+	},
+	data(){
+		return {
+			whitelistFinished: false
+		}
+	},
 	methods: {
-		async mintNft() {
+		async publicMint() {
+			try {
+				const contract = await this.$wallet.getContract()
+				const price = await contract.price();
+				const response = await contract.publicMint({ value: price })
+				this.$toast.show(`You have claimed a founder's pass NFT, thanks for minting!`, {
+					variant: 'success',
+					action: {
+						text: 'Close',
+						onClick: (e, toastObject) => {
+							toastObject.goAway(0)
+						},
+					},
+				})
+			} catch (e) {
+				let message = "Something went wrong! "
+				try {
+					const { context } = getParsedEthersError(e);
+					switch(context){
+						case "ALREADY_MINTED":
+						  message = "Looks like you've already minted. No use doing it again!"
+						  break;
+						default:
+							// do nothing
+					}
+
+				} catch (e) {
+					console.debug(e)
+				}
+
+				this.$toast.error(message, {
+					variant: 'danger',
+					action: {
+						text: 'Close',
+						onClick: (e, toastObject) => {
+							toastObject.goAway(0)
+						},
+					},
+				})
+			}
+		},
+
+		async whitelistMint() {
 			try {
 				const proof = await generateProof(this.$wallet.account, whitelistAddresses)
 				const contract = await this.$wallet.getContract()
