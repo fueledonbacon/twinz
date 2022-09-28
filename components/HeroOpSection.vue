@@ -76,18 +76,9 @@ export default {
 		async mintNft() {
 			try{
 				const proof = await generateProof(this.$wallet.account, whitelistAddresses)
-				const response = await this.whitelistMint(proof)
-			} catch (e) {
-				console.error(e)
-			}
-		},
-		async whitelistMint(proof){
-			try{
-
 				const contract = await this.$wallet.getContract()
-				console.debug("calling fakewhitelistmint")
 				console.debug(proof)
-				// const response = await contract.whitelistMint(proof)
+				const response = await contract.whitelistMint(proof)
 			} catch(e){
 				console.error("whitelistMint error")
 				console.error(e)
