@@ -18,18 +18,17 @@
 						Come Join The TwinZ Community
 					</div>
 					<div class="mb-8 text-4xl font-bold sm:text-5xl md:text-6xl">
-						Double the fun with double the rewards Because
-						<span class="text-primary">Twin</span>ning is winning!
+						We're now minting <span class="text-primary">Founder's Pass</span> NFTs!
 					</div>
 					<div class="flex flex-col items-center sm:flex-row">
 						<a @click.prevent="mintNft"
 							class="mb-4 w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8 hover:cursor-pointer">
-							Mint Founder's NFT
+							Whitelist Mint
 						</a>
-						<a
+						<!-- <a
 							class="w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary duration-300 hover:bg-primary hover:text-white hover:cursor-pointer">
 							Discord Open Soon
-						</a>
+						</a> -->
 					</div>
 				</div>
 			</div>
