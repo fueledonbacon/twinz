@@ -6,6 +6,7 @@
 		<ConnectModal />
 
 		<div class="flex w-full items-center justify-between">
+			<ConnectModal/>
 			<Logo />
 			<!-- Desktop nav -->
 			<nav class="hidden lg:flex">
@@ -46,7 +47,6 @@
 				</a>
 				<div>
 					<ConnectButton/>
-					<ConnectModal/>
 				</div>
 			</div>
 			<!-- <ConnectButton/> -->
@@ -66,6 +66,9 @@
 							'scale-out': !isNavigatorOpen,
 						}">
 						<ul class="flex flex-col text-center text-white">
+							<li class="mb-3">
+								<ConnectButton/>
+							</li>
 							<li
 								class="mb-3"
 								@click="toggleNavigator">
