@@ -20,11 +20,10 @@ describe('TWINZ', function () {
 
   before(async function () {
     signers = await ethers.getSigners();
-
     merkleSigners = []
-    for (let j = 1; j <= 10; j++) {
-      let pos = j % 10;
-      if (pos === 0) pos = 10
+    for (let j = 1; j <= 91; j++) {
+      let pos = j % 91;
+      if (pos === 0) pos = 91
       merkleSigners.push(signers[pos])
     }
     merkleRoot = merkleTree(merkleSigners)
@@ -38,39 +37,107 @@ describe('TWINZ', function () {
     await twinz.deployed()
   });
 
+
   it("Whitelist Mint", async function () {
     //tries to mint where sender is not whitelisted
     let merkleProof = getProof(merkleRoot, signers[0].address)
     await expect(
-      twinz.whitelistMint(merkleProof, 1, { value: SELL_PRICE })
+      twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
     ).to.be.revertedWith(`WHITELIST_NOT_VERIFIED`);
 
     //tries to mint with wrong sell price
     merkleProof = getProof(merkleRoot, signers[1].address)
     await expect(
-      twinz.connect(signers[1]).whitelistMint(merkleProof, 1, { value: toETH(0.4) })
+      twinz.connect(signers[1]).whitelistMint(merkleProof, { value: toETH(0.4) })
     ).to.be.revertedWith(`WRONG_PRICE`);
 
-    //mints until max supply is reached
-    await Promise.all(merkleSigners.map(async s => {
+    //mints until max whitelist limit is reached
+    await Promise.all(merkleSigners.map(async (s, i) => {
       const merkleProof = getProof(merkleRoot, s.address);
-      const tx = await twinz.connect(s).whitelistMint(merkleProof, 10, { value: SELL_PRICE.mul(10) });
-      await tx.wait()
+      if(i < 90) {
+        const tx = await twinz.connect(s).whitelistMint(merkleProof, { value: SELL_PRICE });
+        await tx.wait()
+      }
     }))
-    expect(await twinz.totalSupply()).to.be.equal(100)
-    expect(await twinz.balanceOf(signers[1].address)).to.be.equal(10)
-    expect(await twinz.balanceOf(signers[10].address)).to.be.equal(10)
-    expect(await provider.getBalance(twinz.address)).to.be.equal(toETH(50))
 
-    //tries to mint when max supply reached
-    merkleProof = getProof(merkleRoot, signers[1].address)
+    expect(await twinz.totalSupply()).to.be.equal(90)
+    expect(await twinz.balanceOf(signers[1].address)).to.be.equal(1)
+    expect(await twinz.balanceOf(signers[90].address)).to.be.equal(1)
+    expect(await provider.getBalance(twinz.address)).to.be.equal(SELL_PRICE.mul(90))
+
+    //tries to mint when max whitelist mint reached
+    merkleProof = getProof(merkleRoot, signers[91].address)
     await expect(
-      twinz.connect(signers[1]).whitelistMint(merkleProof, 1, { value: SELL_PRICE })
-    ).to.be.revertedWith(`MAX_SUPPLY_REACHED`);
+      twinz.connect(signers[91]).whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`MAX_WHITELIST_MINT_REACHED`);
+
+    // //tries to mint where whitelist finished
+    await twinz.toggleWhitelist()
+    merkleProof = getProof(merkleRoot, signers[91].address)
+    await expect(
+      twinz.connect(signers[91]).whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`WHITELIST_FINISHED`);
 
     //withdraws balance
+    const beforeBalance = await provider.getBalance(RECEIVER)
     await twinz.withdrawBalance(RECEIVER);
-    expect(await provider.getBalance(RECEIVER)).to.be.equal(toETH(50))
+    expect(await provider.getBalance(RECEIVER)).to.be.equal(beforeBalance.add(SELL_PRICE.mul(90)))
+    expect(await provider.getBalance(twinz.address)).to.be.equal(0)
+  })
+
+  it("Public Mint", async function () {
+
+    //Whitelist mint 50
+    await Promise.all(merkleSigners.map(async (s, i) => {
+      const merkleProof = getProof(merkleRoot, s.address);
+      if(i < 50) {
+        const tx = await twinz.connect(s).whitelistMint(merkleProof, { value: SELL_PRICE });
+        await tx.wait()
+      }
+    }))
+
+    expect(await twinz.totalSupply()).to.be.equal(50)
+    expect(await twinz.balanceOf(signers[1].address)).to.be.equal(1)
+    expect(await twinz.balanceOf(signers[50].address)).to.be.equal(1)
+    expect(await provider.getBalance(twinz.address)).to.be.equal(SELL_PRICE.mul(50))
+
+    //tries to mint where whitelist not yet finishd
+    await expect(
+      twinz.connect(signers[91]).publicMint({ value: SELL_PRICE })
+    ).to.be.revertedWith(`WHITELIST_NOT_YET_FINISHED`);
+
+    // toggle to public mint
+    await twinz.toggleWhitelist()
+    
+    //tries to mint with wrong sell price
+    await expect(
+      twinz.connect(signers[100]).publicMint({ value: toETH(0.4) })
+    ).to.be.revertedWith(`WRONG_PRICE`);
+
+    //tries to mint again
+    await expect(
+      twinz.connect(signers[1]).publicMint({ value: SELL_PRICE })
+    ).to.be.revertedWith(`ALREADY_MINTED`);
+
+    //mints 50 left on public mint
+    Promise.all(new Array(50).fill(0).map(async (a, i) => {
+      await twinz.connect(signers[100 + i]).publicMint({ value: SELL_PRICE })
+    }))
+
+    //tries to mint more than max supply
+    await expect(
+      twinz.connect(signers[200]).publicMint({ value: SELL_PRICE })
+    ).to.be.revertedWith(`MAX_SUPPLY_REACHED`);
+
+    expect(await twinz.totalSupply()).to.be.equal(100)
+    expect(await twinz.balanceOf(signers[1].address)).to.be.equal(1)
+    expect(await twinz.balanceOf(signers[149].address)).to.be.equal(1)
+    expect(await provider.getBalance(twinz.address)).to.be.equal(SELL_PRICE.mul(100))
+
+    //withdraws balance
+    const beforeBalance = await provider.getBalance(RECEIVER)
+    await twinz.withdrawBalance(RECEIVER);
+    expect(await provider.getBalance(RECEIVER)).to.be.equal(beforeBalance.add(SELL_PRICE.mul(100)))
     expect(await provider.getBalance(twinz.address)).to.be.equal(0)
   })
 })
@@ -81,7 +148,7 @@ function toETH(amount) {
 
 function merkleTree(signers) {
   let accounts = [];
-  for (let j = 0; j < 10; j++) {
+  for (let j = 0; j < signers.length; j++) {
     accounts.push(hashData(signers[j].address))
   }
   return new MerkleTree(accounts, utils.keccak256, { sortPairs: true });

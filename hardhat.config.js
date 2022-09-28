@@ -14,12 +14,22 @@
   ALCHEMY_GOERLI_API_KEY,
   ETHERSCAN_API_KEY
 } = process.env;
+
+const accounts = require("./hardhatAccountsList2k.js");
+const accountsList = accounts.accountsList
+
  
 module.exports = {
   solidity: "0.8.13",
   defaultNetwork: "localhost",
   networks: {
-    localhost: {},
+    hardhat: {
+      accounts: accountsList,
+      gas: 10000000,  // tx gas limit
+      blockGasLimit: 15000000,
+      gasPrice: 20000000000,
+      initialBaseFeePerGas: 0,
+  },
     rinkeby: {
       url: `https://eth-rinkeby.alchemyapi.io/v2/${ALCHEMY_RINKEBY_API_KEY}`,
       accounts: [CONTRACT_OWNER_PRIVATE_KEY]

@@ -17,11 +17,14 @@ contract Twinz is ERC721A, Ownable {
     using Strings for uint256;
 
     uint256 private constant _MAX_SUPPLY = 100;
+    uint256 private constant _MAX_WHITELIST_MINT = 90;
     
     uint256 public price;
     string private _baseUri;
 
     bytes32 private _whitelistMerkleRoot;
+    bool public whitelistFinished;
+    mapping(address => bool) public userHasMinted;
 
     constructor(
         uint256 price_,
@@ -53,6 +56,10 @@ contract Twinz is ERC721A, Ownable {
         _baseUri = baseUri;
     }
 
+    function toggleWhitelist() external onlyOwner {
+        whitelistFinished = !whitelistFinished;
+    }
+
     /// @dev override base uri. It will be combined with token ID
     function _baseURI() internal view override returns (string memory) {
         return _baseUri;
@@ -62,12 +69,25 @@ contract Twinz is ERC721A, Ownable {
        return (MerkleProof.verify(_merkleProof, _whitelistMerkleRoot, keccak256(abi.encodePacked(addr))) == true);
     }
     
-    function whitelistMint(bytes32[] calldata _merkleProof, uint256 amount) external payable {
-        require(msg.value == price*amount, "WRONG_PRICE");
-        require(totalSupply() + amount <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
+    function whitelistMint(bytes32[] calldata _merkleProof) external payable {
+        require(!whitelistFinished, "WHITELIST_FINISHED");
+        require(totalSupply() + 1 <= _MAX_WHITELIST_MINT, "MAX_WHITELIST_MINT_REACHED");
         address account = _msgSender();
         require(_verifyWhitelist(_merkleProof, account), "WHITELIST_NOT_VERIFIED");
-        _safeMint(account, amount);
+        _mint(account);
+    }
+
+    function publicMint() external payable {
+        require(whitelistFinished, "WHITELIST_NOT_YET_FINISHED");
+        require(totalSupply() + 1 <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
+        _mint(_msgSender());
+    }
+
+    function _mint(address account) private {
+        require(msg.value == price, "WRONG_PRICE");
+        require(!userHasMinted[account], "ALREADY_MINTED");
+        userHasMinted[account] = true;
+        _safeMint(account, 1);
     }
 
 
