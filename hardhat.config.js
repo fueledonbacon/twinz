@@ -6,6 +6,7 @@
  require("@nomiclabs/hardhat-etherscan");
  require("@nomiclabs/hardhat-ethers");
  require('hardhat-contract-sizer');
+ require('hardhat-abi-exporter');
 
  const {
   ALCHEMY_RINKEBY_API_KEY,
@@ -60,7 +61,7 @@ module.exports = {
     path: './abi',
     runOnCompile: true,
     flat: true,
-    // only: [],
+    only: [':Twinz$'],
     spacing: 2,
     pretty: true
   }
