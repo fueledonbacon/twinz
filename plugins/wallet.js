@@ -169,7 +169,7 @@ export default async ({ $config, store }, inject) => {
             wallet.init()
         })
 
-        wallet.init()
+        // wallet.init()
     }
 
     inject('wallet', wallet)

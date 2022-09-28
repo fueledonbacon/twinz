@@ -35,12 +35,12 @@
 						<span class="text-primary">Twin</span>ning is winning!
 					</div>
 					<div class="flex flex-col items-center sm:flex-row">
-						<a
-							class="mb-4 w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8">
-							Learn more
+						<a  @click.prevent="mintNft"
+							class="mb-4 w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8 hover:cursor-pointer">
+							Mint Founder's NFT
 						</a>
 						<a
-							class="w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary duration-300 hover:bg-primary hover:text-white">
+							class="w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary duration-300 hover:bg-primary hover:text-white hover:cursor-pointer">
 							Discord Open Soon
 						</a>
 					</div>
@@ -66,3 +66,33 @@
 		</div>
 	</div>
 </template>
+<script>
+import { generateProof } from '@/utils/merkle-proof'
+import whitelistAddresses from '@/assets/json/addresses.json'
+
+export default {
+	name: 'HeroOpSection',
+	methods: {
+		async mintNft() {
+			try{
+				const proof = await generateProof(this.$wallet.account, whitelistAddresses)
+				const response = await this.whitelistMint(proof)
+			} catch (e) {
+				console.error(e)
+			}
+		},
+		async whitelistMint(proof){
+			try{
+
+				const contract = await this.$wallet.getContract()
+				console.debug("calling fakewhitelistmint")
+				console.debug(proof)
+				// const response = await contract.whitelistMint(proof)
+			} catch(e){
+				console.error("whitelistMint error")
+				console.error(e)
+			}
+		}
+	}
+}
+</script>

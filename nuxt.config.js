@@ -1,6 +1,6 @@
 import getSiteMeta from './utils/siteMeta'
 // Place rute to abi artifacs
-// import { abi } from './artifacts/contracts/TheMutantMushies.sol/TheMutantMushies.json'
+import abi from './abi/Twinz.json'
 
 export default {
 	// Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -13,14 +13,14 @@ export default {
 		smartContract: {
 			contractName: 'TwinzNFT',
 			name: 'Twinz',
-			symbol: 'XYZ',
-			address: '0x...123',
+			symbol: 'TWINZ',
+			address: '0xd74c23baf271C2dc7de316Cdaa6A0e545Ea5b622',
 			collectionSize: 0,
 			mintPrice: 0.1,
-			chainId: 1,
-			hasWhitelist: false,
+			chainId: 4,
+			hasWhitelist: true,
 			hasDelayedReveal: false,
-			abi: {}
+			abi
 		},
 	}, // Global page headers: https://go.nuxtjs.dev/config-head
 	head: {

@@ -34,15 +34,20 @@
 					<li>
 						<a href="/#community">Community</a>
 					</li>
+					
 				</ul>
 			</nav>
 			<div class="hidden lg:flex">
 				<a class="mr-5 flex h-11 w-11 items-center justify-center bg-primary">
 					<i class="fab fa-twitter text-2xl" />
 				</a>
-				<a class="flex h-11 w-11 items-center justify-center bg-primary">
+				<a class="flex h-11 w-11 items-center justify-center bg-primary mr-5">
 					<i class="fab fa-discord text-2xl" />
 				</a>
+				<div>
+					<ConnectButton/>
+					<ConnectModal/>
+				</div>
 			</div>
 			<!-- <ConnectButton/> -->
 			<!-- Mobile menu -->

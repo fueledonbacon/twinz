@@ -2,7 +2,7 @@
 	<div>
 		<a
 			href="#_"
-			class="whitespace-no-wrap inline-flex items-center justify-center rounded-full border border-blue-300 bg-blue-50 px-6 py-3 text-lg font-medium leading-tight text-blue-500 shadow-sm hover:bg-white hover:text-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-100 focus:ring-offset-2 focus:ring-offset-blue-600"
+			class="whitespace-no-wrap inline-flex items-center justify-center  bg-red-600 px-6 py-3 text-lg font-medium leading-tight text-black shadow-sm hover:bg-black hover:text-red-600 focus:outline-none focus:ring-2 focus:ring-red-600 focus:ring-offset-2 focus:ring-offset-red-600"
 			:disabled="!!$wallet.account"
 			@click="connectWallet">
 			<strong>{{ $wallet.accountCompact }}</strong>
