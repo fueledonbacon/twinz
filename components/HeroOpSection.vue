@@ -77,8 +77,8 @@ export default {
 			try{
 				const proof = await generateProof(this.$wallet.account, whitelistAddresses)
 				const contract = await this.$wallet.getContract()
-				console.debug(proof)
-				const response = await contract.whitelistMint(proof)
+				const price = await contract.price();
+				const response = await contract.whitelistMint(proof, { value: price })
 			} catch(e){
 				console.error("whitelistMint error")
 				console.error(e)
