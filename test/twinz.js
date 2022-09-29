@@ -39,8 +39,18 @@ describe('TWINZ', function () {
 
 
   it("Whitelist Mint", async function () {
-    //tries to mint where sender is not whitelisted
+
+    //tries to mint where sale not yet active
     let merkleProof = getProof(merkleRoot, signers[0].address)
+    await expect(
+      twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`SALE_NOT_ACTIVE`);
+
+    //TODO: perform tests
+    await twinz.setStartTime()
+
+    //tries to mint where sender is not whitelisted
+    merkleProof = getProof(merkleRoot, signers[0].address)
     await expect(
       twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
     ).to.be.revertedWith(`WHITELIST_NOT_VERIFIED`);

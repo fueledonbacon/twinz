@@ -27,7 +27,7 @@ contract Twinz is ERC721A, Ownable {
 
     bytes32 private _whitelistMerkleRoot;
     bool public whitelistFinished;
-    bool public salePeriodOverride = false;
+    bool public salePeriodOverride ;
     mapping(address => bool) public userHasMinted;
 
     constructor(
