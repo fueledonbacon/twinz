@@ -39,106 +39,106 @@ describe('TWINZ', function () {
   });
 
 
-  // it("Whitelist Mint", async function () {
+  it("Whitelist Mint", async function () {
 
-  //   //tries to mint where sale not yet active
-  //   let merkleProof = getProof(merkleRoot, signers[0].address)
-  //   await expect(
-  //     twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
-  //   ).to.be.revertedWith(`SALE_NOT_ACTIVE`);
+    //tries to mint where sale not yet active
+    let merkleProof = getProof(merkleRoot, signers[0].address)
+    await expect(
+      twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`SALE_NOT_ACTIVE`);
 
-  //   let latestTimestamp = (await getLatestTimestamp()).toNumber();
-  //   await twinz.setStartTime(latestTimestamp + 60); //starts in 60 secs
-  //   await twinz.setEndTime(latestTimestamp + 5*60); //ends in 5 mins
-  //   await expect(
-  //     twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
-  //   ).to.be.revertedWith(`SALE_NOT_ACTIVE`);
+    let latestTimestamp = (await getLatestTimestamp()).toNumber();
+    await twinz.setStartTime(latestTimestamp + 60); //starts in 60 secs
+    await twinz.setEndTime(latestTimestamp + 5*60); //ends in 5 mins
+    await expect(
+      twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`SALE_NOT_ACTIVE`);
 
-  //   await timeIncreaseTo(latestTimestamp + 70);
+    await timeIncreaseTo(latestTimestamp + 70);
 
-  //   //tries to mint where sender is not whitelisted
-  //   merkleProof = getProof(merkleRoot, signers[0].address)
-  //   await expect(
-  //     twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
-  //   ).to.be.revertedWith(`WHITELIST_NOT_VERIFIED`);
+    //tries to mint where sender is not whitelisted
+    merkleProof = getProof(merkleRoot, signers[0].address)
+    await expect(
+      twinz.whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`WHITELIST_NOT_VERIFIED`);
 
-  //   //tries to mint with wrong sell price
-  //   merkleProof = getProof(merkleRoot, signers[1].address)
-  //   await expect(
-  //     twinz.connect(signers[1]).whitelistMint(merkleProof, { value: toETH(0.4) })
-  //   ).to.be.revertedWith(`WRONG_PRICE`);
+    //tries to mint with wrong sell price
+    merkleProof = getProof(merkleRoot, signers[1].address)
+    await expect(
+      twinz.connect(signers[1]).whitelistMint(merkleProof, { value: toETH(0.4) })
+    ).to.be.revertedWith(`WRONG_PRICE`);
 
-  //   //mints until max whitelist limit is reached
-  //   await Promise.all(merkleSigners.map(async (s, i) => {
-  //     const merkleProof = getProof(merkleRoot, s.address);
-  //     if(i < 98) {
-  //       const tx = await twinz.connect(s).whitelistMint(merkleProof, { value: SELL_PRICE });
-  //       await tx.wait()
-  //     }
-  //   }))
+    //mints until max whitelist limit is reached
+    await Promise.all(merkleSigners.map(async (s, i) => {
+      const merkleProof = getProof(merkleRoot, s.address);
+      if(i < 98) {
+        const tx = await twinz.connect(s).whitelistMint(merkleProof, { value: SELL_PRICE });
+        await tx.wait()
+      }
+    }))
 
-  //   expect(await twinz.totalSupply()).to.be.equal(99)
-  //   expect(await twinz.balanceOf(signers[1].address)).to.be.equal(1)
-  //   expect(await twinz.balanceOf(signers[98].address)).to.be.equal(1)
-  //   expect(await provider.getBalance(twinz.address)).to.be.equal(SELL_PRICE.mul(98))
+    expect(await twinz.totalSupply()).to.be.equal(99)
+    expect(await twinz.balanceOf(signers[1].address)).to.be.equal(1)
+    expect(await twinz.balanceOf(signers[98].address)).to.be.equal(1)
+    expect(await provider.getBalance(twinz.address)).to.be.equal(SELL_PRICE.mul(98))
 
-  //   // //tries to mint where whitelist finished
-  //   await twinz.toggleWhitelist()
-  //   merkleProof = getProof(merkleRoot, signers[100].address)
-  //   await expect(
-  //     twinz.connect(signers[100]).whitelistMint(merkleProof, { value: SELL_PRICE })
-  //   ).to.be.revertedWith(`WHITELIST_FINISHED`);
+    // //tries to mint where whitelist finished
+    await twinz.toggleWhitelist()
+    merkleProof = getProof(merkleRoot, signers[100].address)
+    await expect(
+      twinz.connect(signers[100]).whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`WHITELIST_FINISHED`);
 
 
-  //    await twinz.toggleWhitelist()
-  //    merkleProof = getProof(merkleRoot, signers[99].address)
-  //    await twinz.connect(signers[99]).whitelistMint(merkleProof, { value: SELL_PRICE });
+     await twinz.toggleWhitelist()
+     merkleProof = getProof(merkleRoot, signers[99].address)
+     await twinz.connect(signers[99]).whitelistMint(merkleProof, { value: SELL_PRICE });
 
-  //    //tries to mint when max mint reached
-  //   merkleProof = getProof(merkleRoot, signers[100].address)
-  //   await expect(
-  //     twinz.connect(signers[100]).whitelistMint(merkleProof, { value: SELL_PRICE })
-  //   ).to.be.revertedWith(`MAX_SUPPLY_REACHED`);
+     //tries to mint when max mint reached
+    merkleProof = getProof(merkleRoot, signers[100].address)
+    await expect(
+      twinz.connect(signers[100]).whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`MAX_SUPPLY_REACHED`);
 
-  //   //withdraws balance
-  //   const beforeBalance = await provider.getBalance(RECEIVER)
-  //   await twinz.withdrawBalance(RECEIVER);
-  //   expect(await provider.getBalance(RECEIVER)).to.be.equal(beforeBalance.add(SELL_PRICE.mul(99)))
-  //   expect(await provider.getBalance(twinz.address)).to.be.equal(0)
-  // })
+    //withdraws balance
+    const beforeBalance = await provider.getBalance(RECEIVER)
+    await twinz.withdrawBalance(RECEIVER);
+    expect(await provider.getBalance(RECEIVER)).to.be.equal(beforeBalance.add(SELL_PRICE.mul(99)))
+    expect(await provider.getBalance(twinz.address)).to.be.equal(0)
+  })
 
-  // it("Checks time start and time end", async function() {
-  //   let latestTimestamp = (await getLatestTimestamp()).toNumber();
-  //   await twinz.setStartTime(latestTimestamp + 60); //starts in 60 secs
-  //   await twinz.setEndTime(latestTimestamp + 5*60); //ends in 5 mins
+  it("Checks time start and time end", async function() {
+    let latestTimestamp = (await getLatestTimestamp()).toNumber();
+    await twinz.setStartTime(latestTimestamp + 60); //starts in 60 secs
+    await twinz.setEndTime(latestTimestamp + 5*60); //ends in 5 mins
 
-  //   await timeIncreaseTo(latestTimestamp + 70);
+    await timeIncreaseTo(latestTimestamp + 70);
 
-  //   let merkleProof = getProof(merkleRoot, signers[99].address)
-  //   await twinz.connect(signers[99]).whitelistMint(merkleProof, { value: SELL_PRICE });
+    let merkleProof = getProof(merkleRoot, signers[99].address)
+    await twinz.connect(signers[99]).whitelistMint(merkleProof, { value: SELL_PRICE });
 
-  //   //time end over
-  //   await timeIncreaseTo(latestTimestamp + 5*60+20);
-  //   //tries to mint when end time finished
-  //   merkleProof = getProof(merkleRoot, signers[100].address)
-  //   await expect(
-  //     twinz.connect(signers[100]).whitelistMint(merkleProof, { value: SELL_PRICE })
-  //   ).to.be.revertedWith(`SALE_NOT_ACTIVE`);
+    //time end over
+    await timeIncreaseTo(latestTimestamp + 5*60+20);
+    //tries to mint when end time finished
+    merkleProof = getProof(merkleRoot, signers[100].address)
+    await expect(
+      twinz.connect(signers[100]).whitelistMint(merkleProof, { value: SELL_PRICE })
+    ).to.be.revertedWith(`SALE_NOT_ACTIVE`);
 
-  //   //overrides saleActive
-  //   await twinz.toggleSalePeriodOverride();
+    //overrides saleActive
+    await twinz.toggleSalePeriodOverride();
 
-  //   await twinz.connect(signers[100]).whitelistMint(merkleProof, { value: SELL_PRICE })
+    await twinz.connect(signers[100]).whitelistMint(merkleProof, { value: SELL_PRICE })
 
-  //   //tries to public mint
-  //   await expect(
-  //     twinz.connect(signers[150]).publicMint({ value: SELL_PRICE })
-  //   ).to.be.revertedWith(`WHITELIST_NOT_YET_FINISHED`);
+    //tries to public mint
+    await expect(
+      twinz.connect(signers[150]).publicMint({ value: SELL_PRICE })
+    ).to.be.revertedWith(`WHITELIST_NOT_YET_FINISHED`);
 
-  //   //finishes whitelist sale
-  //   await twinz.toggleWhitelist();
-  //   await twinz.connect(signers[150]).publicMint({ value: SELL_PRICE })
-  // })
+    //finishes whitelist sale
+    await twinz.toggleWhitelist();
+    await twinz.connect(signers[150]).publicMint({ value: SELL_PRICE })
+  })
 
   it("Public Mint", async function () {
 
