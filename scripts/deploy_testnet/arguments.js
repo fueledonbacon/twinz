@@ -16,7 +16,7 @@ addresses = [
 ]
 /********************************** */
 
-const SELL_PRICE = utils.parseEther("0.45")
+const SELL_PRICE = utils.parseEther("0.01")
 
 function merkleTree(addresses) {
     let accounts = [];

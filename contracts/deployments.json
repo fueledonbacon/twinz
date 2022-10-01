@@ -1,11 +1,10 @@
 {
 	"goerli": {
-		"address": "0xff58a7dC7f7F884b7D86B12B4a2F1F0F1928bBdC",
-		"chainId": 5,
+		"address": "0xCb6b22b2465902F9bb974e835c9E1273A7D5c30b",
 		"arguments": [
 			{
 				"type": "BigNumber",
-				"hex": "0x063eb89da4ed0000"
+				"hex": "0x2386f26fc10000"
 			},
 			"0xc0916dbd459b71d1f004206eb7fc0f203b1be98e93736c9d624cad3209a9433c",
 			"TwinZ NFT Founders Pass",
