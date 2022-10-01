@@ -83,7 +83,6 @@ export default async ({ $config, store }, inject) => {
 			)
 
 			this.contract = contract;
-            //console.log(`Contected to: ${$config.smartContract.address} Contract`);
 
 		},
 

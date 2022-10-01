@@ -70,7 +70,6 @@ export default {
 		} catch(e){
 			try{
 				const { context } = getParsedEthersError(e);
-				console.log(context)
 			} catch(e){
 				console.log(e)
 			}
