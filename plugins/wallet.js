@@ -26,8 +26,6 @@ export default async ({ $config, store }, inject) => {
             return this.network?.chainId
         },
 
-
-
 		async init() {
 			// skip this and autologin
 			if (!window.ethereum) {

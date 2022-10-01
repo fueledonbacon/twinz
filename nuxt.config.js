@@ -17,8 +17,6 @@ export default {
 			name: 'Twinz',
 			symbol: 'TWINZ',
 			address: deployments.goerli.address,
-			collectionSize: 0,
-			mintPrice: 0.1,
 			chainId: deployments.goerli.chainId,
 			hasWhitelist: true,
 			hasDelayedReveal: false,
