@@ -29,8 +29,10 @@ module.exports = [
     merkleTree(addresses).getHexRoot(),
     "TwinZ NFT Founders Pass",
     "TwinZFP",
-    "https://drive.google.com/file/d/16jomnURJNv2Wv67L5BwfjAzsprKeL-F4/view/",
-    "0x0decb04d7f0685d196beb845a62356ff2c4098fd"
+    "https://twinznftfp.s3.amazonaws.com/founders-pass.json",
+    "0x0decb04d7f0685d196beb845a62356ff2c4098fd",
+    1664658000, // 2022-09-01 17:00:00 EST
+    1665176400, // 2022-09-07 17:00:00 EST
 ];
 
 

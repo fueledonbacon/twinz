@@ -43,7 +43,9 @@ contract Twinz is ERC721A, Ownable {
         string memory name,
         string memory symbol,
         string memory baseUri,
-        address airdrop
+        address airdrop,
+        uint _startSaleTime,
+        uint _endSaleTime
     )
         ERC721A(name, symbol)
     {
@@ -52,6 +54,8 @@ contract Twinz is ERC721A, Ownable {
         _whitelistMerkleRoot = whitelistMerkleRoot;
         _baseUri = baseUri;
         price = price_;
+        startSaleTime = _startSaleTime;
+        endSaleTime = _endSaleTime;
     }
 
     function setStartTime(uint startTime) external onlyOwner {

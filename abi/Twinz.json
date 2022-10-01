@@ -1,5 +1,5 @@
 [
-  "constructor(uint256,bytes32,string,string,string,address)",
+  "constructor(uint256,bytes32,string,string,string,address,uint256,uint256)",
   "error ApprovalCallerNotOwnerNorApproved()",
   "error ApprovalQueryForNonexistentToken()",
   "error ApprovalToCurrentOwner()",
