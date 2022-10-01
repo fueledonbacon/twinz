@@ -10,7 +10,7 @@ export const handler = async event => {
     }
 
     if(id === undefined || parseInt(id) > 100 || parseInt(id) < 0){
-        metdata.name =  `Twinz NFT Founder's Passes`
+        metadata.name =  `Twinz NFT Founder's Passes`
     }
 
     return { statusCode: 200, body: JSON.stringify(metadata) }
