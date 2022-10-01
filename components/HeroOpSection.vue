@@ -63,24 +63,53 @@ import { getParsedEthersError } from "@enzoferey/ethers-error-parser";
 
 export default {
 	name: 'HeroOpSection',
-	async mounted(){
-		try{
+	async mounted() {
+		try {
 			const contract = await this.$wallet.getContract()
 			this.whitelistFinished = await contract.whitelistFinished()
-		} catch(e){
-			try{
+		} catch (e) {
+			try {
 				const { context } = getParsedEthersError(e);
-			} catch(e){
+			} catch (e) {
 				console.log(e)
 			}
 		}
 	},
-	data(){
+	data() {
 		return {
 			whitelistFinished: false
 		}
 	},
 	methods: {
+		handleContractErrors(e) {
+			let message = "Something went wrong! "
+			try {
+				const { context } = getParsedEthersError(e);
+				switch (context) {
+					case "ALREADY_MINTED":
+						message = "Looks like you've already minted. No use doing it again!"
+						break;
+					case "SALE_NOT_ACTIVE":
+						message = "The sale has not yet begun. Check again at 5pm EST on October 1st, 2022!"
+						break;
+					default:
+					// do nothing
+				}
+
+			} catch (e) {
+				console.debug(e)
+			}
+
+			this.$toast.error(message, {
+				variant: 'danger',
+				action: {
+					text: 'Close',
+					onClick: (e, toastObject) => {
+						toastObject.goAway(0)
+					},
+				},
+			})
+		},
 		async publicMint() {
 			try {
 				const contract = await this.$wallet.getContract()
@@ -96,30 +125,7 @@ export default {
 					},
 				})
 			} catch (e) {
-				let message = "Something went wrong! "
-				try {
-					const { context } = getParsedEthersError(e);
-					switch(context){
-						case "ALREADY_MINTED":
-						  message = "Looks like you've already minted. No use doing it again!"
-						  break;
-						default:
-							// do nothing
-					}
-
-				} catch (e) {
-					console.debug(e)
-				}
-
-				this.$toast.error(message, {
-					variant: 'danger',
-					action: {
-						text: 'Close',
-						onClick: (e, toastObject) => {
-							toastObject.goAway(0)
-						},
-					},
-				})
+				this.handleContractErrors(e)
 			}
 		},
 
@@ -139,30 +145,7 @@ export default {
 					},
 				})
 			} catch (e) {
-				let message = "Something went wrong! "
-				try {
-					const { context } = getParsedEthersError(e);
-					switch(context){
-						case "ALREADY_MINTED":
-						  message = "Looks like you've already minted. No use doing it again!"
-						  break;
-						default:
-							// do nothing
-					}
-
-				} catch (e) {
-					console.debug(e)
-				}
-
-				this.$toast.error(message, {
-					variant: 'danger',
-					action: {
-						text: 'Close',
-						onClick: (e, toastObject) => {
-							toastObject.goAway(0)
-						},
-					},
-				})
+				this.handleContractErrors(e)
 			}
 		}
 	}
