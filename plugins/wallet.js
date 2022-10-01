@@ -65,6 +65,7 @@ export default async ({ $config, store }, inject) => {
                 this.disconnect()
             }
         },
+
         async setContract(){
             const { chainId, address, abi } = $config.smartContract
             
@@ -95,16 +96,15 @@ export default async ({ $config, store }, inject) => {
 			} catch(e) {
 				console.log(e)
 			}
-
 		},
 
         async connect() {
             if (!window.ethereum) {
 				window.ethereum = await this.Web3Modal.connect();
 			}
-            wallet.network = await wallet.provider.getNetwork()
-            const [account] = await wallet.provider.send('eth_requestAccounts')
-            console.info('wallet connected', {account})
+            this.network = await this?.provider?.getNetwork()
+            const [account] = await this.provider.send('eth_requestAccounts')
+            console.info('wallet connected', { account })
             await this.setContract()
 
             if(account) {
