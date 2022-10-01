@@ -1,6 +1,7 @@
 const { ethers } = require('hardhat');
 const util = require('util');
 const exec = util.promisify(require('child_process').exec);
+const updateOutput = require('../update_output.js');
 
 const args = require("./arguments")
 const path = "./scripts/deploy_testnet/arguments.js";
@@ -12,6 +13,7 @@ async function main() {
   const contract = await Contract.deploy(...args)
   await contract.deployed();
   console.log("Twinz contract deployed to address:", contract.address)
+  await updateOutput('./contracts/deployments.json', { goerli: { address: contract.address, arguments: args } })
 
   console.log("Waiting for one minute for contract propagation")
   await new Promise(r => setTimeout(r, 60000));

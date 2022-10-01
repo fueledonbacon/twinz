@@ -130,7 +130,7 @@ contract Twinz is ERC721A, Ownable {
         if (!_exists(tokenId)) revert URIQueryForNonexistentToken();
 
         string memory baseURI = _baseURI();
-        return bytes(baseURI).length != 0 ? string(abi.encodePacked(baseURI, tokenId.toString(), ".json")) : '';
+        return bytes(baseURI).length != 0 ? string(abi.encodePacked(baseURI, tokenId.toString())) : '';
     }
 
     function supportsInterface(bytes4 interfaceId) public view virtual override(ERC721A) returns (bool) {

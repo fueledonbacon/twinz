@@ -11,7 +11,8 @@ addresses = [
     ...addresses,
     "0x05db46B2588ebB55B4525b5d6103F41a776f9ec2",
     "0x49395fa317882f64d2373e3b36d8065ea7671cd3",
-    "0x20f7d54fa1bb6a25047d9691d3ae93ac951c8a95"
+    "0x20f7d54fa1bb6a25047d9691d3ae93ac951c8a95",
+    "0xCf83D441D8838acb8C4d77f7Dbc661aD9aAea7Da"
 ]
 /********************************** */
 
@@ -40,8 +41,10 @@ module.exports = [
     merkleTree(addresses).getHexRoot(),
     "TwinZ NFT Founders Pass",
     "TwinZFP",
-    "https://drive.google.com/file/d/16jomnURJNv2Wv67L5BwfjAzsprKeL-F4/view/",
-    "0x0decb04d7f0685d196beb845a62356ff2c4098fd"
+    "https://twinznft.com/.netlify/functions/metadata/",
+    "0x0decb04d7f0685d196beb845a62356ff2c4098fd",
+    1664658000, // 2022-09-01 17:00:00 EST
+    1665176400, // 2022-09-07 17:00:00 EST
 ];
 
 

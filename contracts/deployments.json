@@ -1,0 +1,19 @@
+{
+	"goerli": {
+		"address": "0xff58a7dC7f7F884b7D86B12B4a2F1F0F1928bBdC",
+		"chainId": 5,
+		"arguments": [
+			{
+				"type": "BigNumber",
+				"hex": "0x063eb89da4ed0000"
+			},
+			"0xc0916dbd459b71d1f004206eb7fc0f203b1be98e93736c9d624cad3209a9433c",
+			"TwinZ NFT Founders Pass",
+			"TwinZFP",
+			"https://twinznft.com/.netlify/functions/metadata/",
+			"0x0decb04d7f0685d196beb845a62356ff2c4098fd",
+			1664658000,
+			1665176400
+		]
+	}
+}
