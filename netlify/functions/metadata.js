@@ -9,7 +9,7 @@ export const handler = async event => {
         image: "https://twinznftfp.s3.amazonaws.com/TwinZNFTFoundersPass.gif"
     }
 
-    if(id === undefined || parseInt(id) > 100){
+    if(id === undefined || parseInt(id) > 100 || parseInt(id) < 0){
         metdata.name =  `Twinz NFT Founder's Passes`
     }
 
