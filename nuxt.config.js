@@ -1,6 +1,8 @@
 import getSiteMeta from './utils/siteMeta'
 // Place rute to abi artifacs
-// import { abi } from './artifacts/contracts/TheMutantMushies.sol/TheMutantMushies.json'
+import abi from './abi/Twinz.json'
+
+import deployments from "./contracts/deployments.json"
 
 export default {
 	// Disable server-side rendering: https://go.nuxtjs.dev/ssr-mode
@@ -12,15 +14,13 @@ export default {
 	publicRuntimeConfig: {
 		smartContract: {
 			contractName: 'TwinzNFT',
-			name: 'Twinz',
-			symbol: 'XYZ',
-			address: '0x...123',
-			collectionSize: 0,
-			mintPrice: 0.1,
+			name: "TwinZ NFT Founders Pass",
+			symbol: "TwinZFP",
+			address: deployments.mainnet.address,
 			chainId: 1,
-			hasWhitelist: false,
+			hasWhitelist: true,
 			hasDelayedReveal: false,
-			abi: {}
+			abi
 		},
 	}, // Global page headers: https://go.nuxtjs.dev/config-head
 	head: {
@@ -117,5 +117,10 @@ export default {
 	// Build Configuration: https://go.nuxtjs.dev/config-build
 	build: {
 		transpile: ['web3modal-vue'],
+		postcss: {
+			plugins: {
+				"postcss-custom-properties": false
+			}
+		}
 	},
 }

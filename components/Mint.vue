@@ -52,7 +52,6 @@ export default {
 		}
 	},
 	async mounted() {
-		console.log(`ESTADO: ${this.isPublicSaleActive}`)
 		this.$wallet.contractState = this.userContractRelationship.bind(this)
 	},
 	computed: {

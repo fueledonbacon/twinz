@@ -32,7 +32,6 @@ export default {
 	},
 	computed: {
 		startMint() {
-			console.log()
 			return this.now < this.presaleStartTime
 		},
 	},

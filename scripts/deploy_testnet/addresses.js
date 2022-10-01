@@ -1,4 +1,4 @@
-[
+module.exports = [
     "0x85b826b5eb230d03ce1bb41ded646909bf0c3f4e",
     "0x7b5a840ad31c972a02da14ede506e7ce20d25219",
     "0x6e073624229af21ba225ffe4092eadf007949435",

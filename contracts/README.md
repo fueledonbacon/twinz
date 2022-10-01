@@ -3,8 +3,9 @@
 Here are some prior production contracts, modify to suit the needs of current launch
 
 
-npx hardhat run --network rinkeby ./scripts/deploy.js
+npx hardhat run --network goerli ./scripts/deploy_testnet/deploy.js
+npx hardhat run --network mainnet ./scripts/deploy_mainnet/deploy.js
 
 
-## Rinkeby
-Twinz contract deployed to address: 0xd74c23baf271C2dc7de316Cdaa6A0e545Ea5b622
+## Goerli
+Twinz contract deployed to address: 0xDc9497a20970426082a6068a2E2Cb0492ee6B6ff

@@ -6,6 +6,7 @@
 		<ConnectModal />
 
 		<div class="flex w-full items-center justify-between">
+			<ConnectModal/>
 			<Logo />
 			<!-- Desktop nav -->
 			<nav class="hidden lg:flex">
@@ -34,15 +35,19 @@
 					<li>
 						<a href="/#community">Community</a>
 					</li>
+					
 				</ul>
 			</nav>
 			<div class="hidden lg:flex">
 				<a class="mr-5 flex h-11 w-11 items-center justify-center bg-primary">
 					<i class="fab fa-twitter text-2xl" />
 				</a>
-				<a class="flex h-11 w-11 items-center justify-center bg-primary">
+				<a class="flex h-11 w-11 items-center justify-center bg-primary mr-5">
 					<i class="fab fa-discord text-2xl" />
 				</a>
+				<div>
+					<ConnectButton/>
+				</div>
 			</div>
 			<!-- <ConnectButton/> -->
 			<!-- Mobile menu -->
@@ -61,6 +66,9 @@
 							'scale-out': !isNavigatorOpen,
 						}">
 						<ul class="flex flex-col text-center text-white">
+							<li class="mb-3">
+								<ConnectButton/>
+							</li>
 							<li
 								class="mb-3"
 								@click="toggleNavigator">

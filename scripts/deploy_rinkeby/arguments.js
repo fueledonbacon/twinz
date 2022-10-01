@@ -40,7 +40,8 @@ module.exports = [
     merkleTree(addresses).getHexRoot(),
     "TWINZ_NFT",
     "TWINZ",
-    "www.twinz.io/"
+    "https://drive.google.com/file/d/16jomnURJNv2Wv67L5BwfjAzsprKeL-F4/view/",
+    "0x05db46B2588ebB55B4525b5d6103F41a776f9ec2"
 ];
 
 
