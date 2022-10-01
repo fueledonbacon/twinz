@@ -58,7 +58,7 @@
 </template>
 <script>
 import { generateProof } from '@/utils/merkle-proof'
-import whitelistAddresses from '@/assets/json/addresses.json'
+import whitelistAddresses from '@/assets/json/whitelist.json'
 import { getParsedEthersError } from "@enzoferey/ethers-error-parser";
 
 export default {

@@ -9,7 +9,8 @@
     "generate": "nuxt generate --fail-on-error",
     "compile-contracts": "npx hardhat compile",
     "format-all": "prettier --write \"**/*.vue\"",
-    "deploy:goerli": "npx hardhat run --network goerli ./scripts/deploy_testnet/deploy.js"
+    "deploy:goerli": "npx hardhat run --network goerli ./scripts/deploy_testnet/deploy.js",
+    "deploy:mainnet": "npx hardhat run --network mainnet ./scripts/deploy_mainnet/deploy.js"
   },
   "dependencies": {
     "@enzoferey/ethers-error-parser": "^0.2.2",
