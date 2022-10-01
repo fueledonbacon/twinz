@@ -17,7 +17,6 @@ contract Twinz is ERC721A, Ownable {
     using Strings for uint256;
 
     uint256 private constant _MAX_SUPPLY = 100;
-    uint256 private constant _MAX_WHITELIST_MINT = 90;
     
     uint256 public price;
     uint256 public startSaleTime;
@@ -27,18 +26,29 @@ contract Twinz is ERC721A, Ownable {
 
     bytes32 private _whitelistMerkleRoot;
     bool public whitelistFinished;
-    bool public salePeriodOverride = false;
+    bool public salePeriodOverride ;
     mapping(address => bool) public userHasMinted;
+
+    modifier canMint {
+        require(saleIsActive(), "SALE_NOT_ACTIVE");
+        require(msg.value == price, "WRONG_PRICE");
+        require(!userHasMinted[_msgSender()], "ALREADY_MINTED");
+        require(totalSupply() + 1 <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
+        _;
+    }
 
     constructor(
         uint256 price_,
         bytes32 whitelistMerkleRoot,
         string memory name,
         string memory symbol,
-        string memory baseUri
+        string memory baseUri,
+        address airdrop
     )
         ERC721A(name, symbol)
     {
+        require(airdrop != address(0), "INVALID_AIRDROP_ADDRESS");
+        _safeMint(airdrop, 1);
         _whitelistMerkleRoot = whitelistMerkleRoot;
         _baseUri = baseUri;
         price = price_;
@@ -93,26 +103,20 @@ contract Twinz is ERC721A, Ownable {
        return (MerkleProof.verify(_merkleProof, _whitelistMerkleRoot, keccak256(abi.encodePacked(addr))) == true);
     }
     
-    function whitelistMint(bytes32[] calldata _merkleProof) external payable {
-        require(saleIsActive(), "SALE_NOT_ACTIVE");
+    function whitelistMint(bytes32[] calldata _merkleProof) external payable canMint {
         require(!whitelistFinished, "WHITELIST_FINISHED");
-        require(totalSupply() + 1 <= _MAX_WHITELIST_MINT, "MAX_WHITELIST_MINT_REACHED");
         address account = _msgSender();
         require(_verifyWhitelist(_merkleProof, account), "WHITELIST_NOT_VERIFIED");
         _mint(account);
     }
 
-    function publicMint() external payable {
-        require(saleIsActive(), "SALE_NOT_ACTIVE");
-        require(!whitelistFinished, "WHITELIST_FINISHED");
+    function publicMint() external payable canMint  {
         require(whitelistFinished, "WHITELIST_NOT_YET_FINISHED");
-        require(totalSupply() + 1 <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
         _mint(_msgSender());
     }
 
     function _mint(address account) private {
-        require(msg.value == price, "WRONG_PRICE");
-        require(!userHasMinted[account], "ALREADY_MINTED");
+        
         userHasMinted[account] = true;
         _safeMint(account, 1);
     }

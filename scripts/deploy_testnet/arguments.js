@@ -15,7 +15,7 @@ addresses = [
 ]
 /********************************** */
 
-const SELL_PRICE = utils.parseEther("0.5")
+const SELL_PRICE = utils.parseEther("0.45")
 
 function merkleTree(addresses) {
     let accounts = [];
@@ -38,10 +38,10 @@ function hashData(account) {
 module.exports = [
     SELL_PRICE,
     merkleTree(addresses).getHexRoot(),
-    "TWINZ_NFT",
-    "TWINZ",
+    "TwinZ NFT Founders Pass",
+    "TwinZFP",
     "https://drive.google.com/file/d/16jomnURJNv2Wv67L5BwfjAzsprKeL-F4/view/",
-    "0x05db46B2588ebB55B4525b5d6103F41a776f9ec2"
+    "0x0decb04d7f0685d196beb845a62356ff2c4098fd"
 ];
 
 
