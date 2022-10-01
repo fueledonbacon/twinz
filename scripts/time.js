@@ -7,7 +7,6 @@ module.exports = {
         await time.advanceBlock()
     },
     
-    
     async getLatestBlock() {
         const latestBlock = await time.latestBlock();
         return latestBlock;

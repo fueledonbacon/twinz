@@ -3,7 +3,7 @@ const util = require('util');
 const exec = util.promisify(require('child_process').exec);
 
 const args = require("./arguments")
-const path = "./scripts/arguments.js";
+const path = "./scripts/deploy_rinkeby/arguments.js";
 const NETWORK = "rinkeby"
 
 async function main() {
