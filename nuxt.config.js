@@ -14,10 +14,10 @@ export default {
 	publicRuntimeConfig: {
 		smartContract: {
 			contractName: 'TwinzNFT',
-			name: 'Twinz',
-			symbol: 'TWINZ',
-			address: deployments.goerli.address,
-			chainId: deployments.goerli.chainId,
+			name: "TwinZ NFT Founders Pass",
+			symbol: "TwinZFP",
+			address: deployments.mainnet.address,
+			chainId: 1,
 			hasWhitelist: true,
 			hasDelayedReveal: false,
 			abi
