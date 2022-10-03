@@ -86,6 +86,9 @@ export default {
 			try {
 				const { context } = getParsedEthersError(e);
 				switch (context) {
+					case "WHITELIST_NOT_VERIFIED":
+						message = "Your wallet is not whitelisted, sorry."
+						break;
 					case "ALREADY_MINTED":
 						message = "Looks like you've already minted. No use doing it again!"
 						break;
