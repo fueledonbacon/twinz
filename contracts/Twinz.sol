@@ -9,24 +9,25 @@ pragma solidity ^0.8.13;
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
-
 import "./ERC721A.sol";
-
 
 contract Twinz is ERC721A, Ownable {
     using Strings for uint256;
 
     uint256 private constant _MAX_SUPPLY = 100;
+    uint256 private constant _AIRDROP_LIMIT = 10;
     
+    uint256 public airdropCount = 0;
     uint256 public price;
     uint256 public startSaleTime;
     uint256 public endSaleTime;
     
     string private _baseUri;
 
-    bytes32 private _whitelistMerkleRoot;
+    bytes32 public whitelistMerkleRoot;
     bool public whitelistFinished;
-    bool public salePeriodOverride ;
+    bool public salePeriodOverride;
+
     mapping(address => bool) public userHasMinted;
 
     modifier canMint {
@@ -39,23 +40,28 @@ contract Twinz is ERC721A, Ownable {
 
     constructor(
         uint256 price_,
-        bytes32 whitelistMerkleRoot,
+        bytes32 _whitelistMerkleRoot,
         string memory name,
         string memory symbol,
         string memory baseUri,
-        address airdrop,
         uint _startSaleTime,
         uint _endSaleTime
     )
         ERC721A(name, symbol)
     {
-        require(airdrop != address(0), "INVALID_AIRDROP_ADDRESS");
-        _safeMint(airdrop, 1);
-        _whitelistMerkleRoot = whitelistMerkleRoot;
+        whitelistMerkleRoot = _whitelistMerkleRoot;
         _baseUri = baseUri;
         price = price_;
         startSaleTime = _startSaleTime;
         endSaleTime = _endSaleTime;
+    }
+
+    function airdrop(address[] memory addresses) external onlyOwner {
+        for (uint i = 0; i < addresses.length; i++) {
+            require(airdropCount < _AIRDROP_LIMIT, "AIRDROP_LIMIT_REACHED");
+            _safeMint(addresses[i], 1);
+            airdropCount++;
+        }
     }
 
     function setStartTime(uint startTime) external onlyOwner {
@@ -82,8 +88,8 @@ contract Twinz is ERC721A, Ownable {
         to.transfer(address(this).balance);
     }
 
-    function setMerkleRoot(bytes32 whitelistMerkleRoot) external onlyOwner {
-        _whitelistMerkleRoot = whitelistMerkleRoot;
+    function setMerkleRoot(bytes32 _whitelistMerkleRoot) external onlyOwner {
+        whitelistMerkleRoot = _whitelistMerkleRoot;
     }
 
     function setBaseURI(string memory baseUri) external onlyOwner {
@@ -104,7 +110,7 @@ contract Twinz is ERC721A, Ownable {
     }
 
     function _verifyWhitelist(bytes32[] calldata _merkleProof, address addr) private view returns(bool) {
-       return (MerkleProof.verify(_merkleProof, _whitelistMerkleRoot, keccak256(abi.encodePacked(addr))) == true);
+       return (MerkleProof.verify(_merkleProof, whitelistMerkleRoot, keccak256(abi.encodePacked(addr))) == true);
     }
     
     function whitelistMint(bytes32[] calldata _merkleProof) external payable canMint {
