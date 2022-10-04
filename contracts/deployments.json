@@ -1,18 +1,17 @@
 {
 	"goerli": {
-		"address": "0xCb6b22b2465902F9bb974e835c9E1273A7D5c30b",
+		"address": "0x90d423a5B112ee8afcf476E6494946a3017Dfca5",
 		"arguments": [
 			{
 				"type": "BigNumber",
-				"hex": "0x2386f26fc10000"
+				"hex": "0x0214e8348c4f0000"
 			},
+			1664906400,
+			1665511200,
 			"0xc0916dbd459b71d1f004206eb7fc0f203b1be98e93736c9d624cad3209a9433c",
 			"TwinZ NFT Founders Pass",
 			"TwinZFP",
-			"https://twinznft.com/.netlify/functions/metadata/",
-			"0x0decb04d7f0685d196beb845a62356ff2c4098fd",
-			1664658000,
-			1665176400
+			"https://twinznft.com/.netlify/functions/metadata/"
 		]
 	},
 	"mainnet": {

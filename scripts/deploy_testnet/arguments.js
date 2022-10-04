@@ -16,7 +16,7 @@ addresses = [
 ]
 /********************************** */
 
-const SELL_PRICE = utils.parseEther("0.01")
+const SELL_PRICE = utils.parseEther("0.15")
 
 function merkleTree(addresses) {
     let accounts = [];
@@ -24,7 +24,6 @@ function merkleTree(addresses) {
         accounts.push(hashData(addresses[j]))
     }
     const merkleTree =  new MerkleTree(accounts, utils.keccak256, { sortPairs: true });
-    console.log(JSON.stringify(getProof(merkleTree, "0x05db46B2588ebB55B4525b5d6103F41a776f9ec2")).replace(/"/g, ''))
     return merkleTree;
 }
 
@@ -38,13 +37,12 @@ function hashData(account) {
 
 module.exports = [
     SELL_PRICE,
+    1664906400, //Starts Tuesday, October 4, 2022 1:00:00 PM GMT-05:00
+    1665511200, //Ends Tuesday, October 11, 2022 1:00:00 PM GMT-05:00
     merkleTree(addresses).getHexRoot(),
     "TwinZ NFT Founders Pass",
     "TwinZFP",
     "https://twinznft.com/.netlify/functions/metadata/",
-    "0x0decb04d7f0685d196beb845a62356ff2c4098fd",
-    1664658000, // 2022-09-01 17:00:00 EST
-    1665176400, // 2022-09-07 17:00:00 EST
 ];
 
 

@@ -40,12 +40,12 @@ contract Twinz is ERC721A, Ownable {
 
     constructor(
         uint256 price_,
+        uint256 _startSaleTime,
+        uint256 _endSaleTime,
         bytes32 _whitelistMerkleRoot,
         string memory name,
         string memory symbol,
-        string memory baseUri,
-        uint _startSaleTime,
-        uint _endSaleTime
+        string memory baseUri
     )
         ERC721A(name, symbol)
     {
@@ -57,8 +57,9 @@ contract Twinz is ERC721A, Ownable {
     }
 
     function airdrop(address[] memory addresses) external onlyOwner {
-        require(addresses.length  + totalSupply() <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
-        for (uint i = 0; i < addresses.length; i++) {
+        uint256 length = addresses.length;
+        require(length  + totalSupply() <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
+        for (uint i = 0; i < length; i++) {
             _safeMint(addresses[i], 1);
         }
     }
