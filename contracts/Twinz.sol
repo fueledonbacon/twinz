@@ -15,9 +15,7 @@ contract Twinz is ERC721A, Ownable {
     using Strings for uint256;
 
     uint256 private constant _MAX_SUPPLY = 100;
-    uint256 private constant _AIRDROP_LIMIT = 10;
     
-    uint256 public airdropCount = 0;
     uint256 public price;
     uint256 public startSaleTime;
     uint256 public endSaleTime;
@@ -130,7 +128,6 @@ contract Twinz is ERC721A, Ownable {
         userHasMinted[account] = true;
         _safeMint(account, 1);
     }
-
 
     function tokenURI(uint256 tokenId) public view override returns (string memory) {
         if (!_exists(tokenId)) revert URIQueryForNonexistentToken();

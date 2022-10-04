@@ -18,7 +18,6 @@
   "event OwnershipTransferred(address indexed,address indexed)",
   "event Transfer(address indexed,address indexed,uint256 indexed)",
   "function airdrop(address[])",
-  "function airdropCount() view returns (uint256)",
   "function approve(address,uint256)",
   "function balanceOf(address) view returns (uint256)",
   "function endSaleTime() view returns (uint256)",

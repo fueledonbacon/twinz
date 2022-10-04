@@ -15,19 +15,18 @@
 		]
 	},
 	"mainnet": {
-		"address": "0xCfDE1c7bEa9C629f656F4Bbc88250A5d0E607655",
+		"address": "0x056C4eF7f485A677A3ee3a7c62Af42c5ED2BEDbB",
 		"arguments": [
 			{
 				"type": "BigNumber",
-				"hex": "0x063eb89da4ed0000"
+				"hex": "0x0214e8348c4f0000"
 			},
+			1664906400,
+			1665511200,
 			"0xe74eabd991ca4826aada1ee1f8ef9cddd02565d9a30945672545d3c47d981d02",
 			"TwinZ NFT Founders Pass",
 			"TwinZFP",
-			"https://twinznft.com/.netlify/functions/metadata/",
-			"0x0decb04d7f0685d196beb845a62356ff2c4098fd",
-			1664658000,
-			1665176400
+			"https://twinznft.com/.netlify/functions/metadata/"
 		]
 	}
 }
