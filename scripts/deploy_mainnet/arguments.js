@@ -4,7 +4,7 @@ const addresses = require("./addresses");
 
 require('dotenv').config({ path: __dirname + '/.env' })
 
-const SELL_PRICE = utils.parseEther("0.45")
+const SELL_PRICE = utils.parseEther("0.15")
 
 function merkleTree(addresses) {
     let accounts = [];
@@ -15,22 +15,18 @@ function merkleTree(addresses) {
     return merkleTree;
 }
 
-const getProof = (merkleTree, account) => {
-    return merkleTree.getHexProof(hashData(account));
-}
-
 function hashData(account) {
     return Buffer.from(utils.solidityKeccak256(['address'], [account]).slice(2), 'hex')
 }
 
 module.exports = [
     SELL_PRICE,
+    1664906400, //Starts Tuesday, October 4, 2022 1:00:00 PM GMT-05:00
+    1665511200, //Ends Tuesday, October 11, 2022 1:00:00 PM GMT-05:00
     merkleTree(addresses).getHexRoot(),
     "TwinZ NFT Founders Pass",
     "TwinZFP",
     "https://twinznft.com/.netlify/functions/metadata/",
-    1664906400, // 2022-10-04 14:00:00 EST
-    1665511200, // 2022-10-11 14:00:00 EST
 ];
 
 
