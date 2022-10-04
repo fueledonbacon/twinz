@@ -57,10 +57,9 @@ contract Twinz is ERC721A, Ownable {
     }
 
     function airdrop(address[] memory addresses) external onlyOwner {
+        require(addresses.length  + totalSupply() <= _MAX_SUPPLY, "MAX_SUPPLY_REACHED");
         for (uint i = 0; i < addresses.length; i++) {
-            require(airdropCount < _AIRDROP_LIMIT, "AIRDROP_LIMIT_REACHED");
             _safeMint(addresses[i], 1);
-            airdropCount++;
         }
     }
 
