@@ -86,6 +86,12 @@ export default {
 			try {
 				const { context } = getParsedEthersError(e);
 				switch (context) {
+	                case "MAX_SUPPLY_REACHED":
+						message = "The collection is sold out. Please buy on OpenSea.";
+						break;
+	                case "WRONG_PRICE":
+	                    message = "Please make sure you are sending the correct amount of ETH.";
+	                    break;
 					case "WHITELIST_NOT_VERIFIED":
 						message = "Your wallet is not whitelisted, sorry."
 						break;
