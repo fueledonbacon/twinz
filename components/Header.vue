@@ -39,11 +39,11 @@
 				</ul>
 			</nav>
 			<div class="hidden lg:flex">
-				<a class="mr-5 flex h-11 w-11 items-center justify-center bg-primary">
-					<i class="fab fa-twitter text-2xl" />
+				<a href="https://twitter.com/TwinZ_eth" class="mr-5 flex h-11 w-11 items-center justify-center bg-primary">
+					<i class="fab fa-twitter text-2xl"></i>
 				</a>
-				<a class="flex h-11 w-11 items-center justify-center bg-primary mr-5">
-					<i class="fab fa-discord text-2xl" />
+				<a href="https://discord.gg/twinz" target="_blank" class="flex h-11 w-11 items-center justify-center bg-primary mr-5">
+					<i class="fab fa-discord text-2xl"></i>
 				</a>
 				<div>
 					<ConnectButton/>
@@ -111,7 +111,7 @@
 							</li>
 							<li class="mt-8">
 								<a
-									href="https://discord.com/invite/"
+									href="https://discord.gg/twinz"
 									class="discord">
 									<img
 										class="mx-auto w-36"

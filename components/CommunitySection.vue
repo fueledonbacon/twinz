@@ -30,8 +30,8 @@
 				</div>
 			</div>
 			<div>
-				<a class="w-60 bg-primary px-6 py-5 text-center font-bold">
-					Discord Open Soon
+				<a href="https://discord.gg/twinz" class="w-60 bg-primary px-6 py-5 text-center font-bold">
+					Discord
 				</a>
 			</div>
 		</div>
