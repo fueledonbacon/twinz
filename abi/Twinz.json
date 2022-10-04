@@ -1,5 +1,5 @@
 [
-  "constructor(uint256,bytes32,string,string,string,address,uint256,uint256)",
+  "constructor(uint256,uint256,uint256,bytes32,string,string,string)",
   "error ApprovalCallerNotOwnerNorApproved()",
   "error ApprovalQueryForNonexistentToken()",
   "error ApprovalToCurrentOwner()",
@@ -17,6 +17,7 @@
   "event ApprovalForAll(address indexed,address indexed,bool)",
   "event OwnershipTransferred(address indexed,address indexed)",
   "event Transfer(address indexed,address indexed,uint256 indexed)",
+  "function airdrop(address[])",
   "function approve(address,uint256)",
   "function balanceOf(address) view returns (uint256)",
   "function endSaleTime() view returns (uint256)",
@@ -49,6 +50,7 @@
   "function transferOwnership(address)",
   "function userHasMinted(address) view returns (bool)",
   "function whitelistFinished() view returns (bool)",
+  "function whitelistMerkleRoot() view returns (bytes32)",
   "function whitelistMint(bytes32[]) payable",
   "function withdrawBalance(address)"
 ]

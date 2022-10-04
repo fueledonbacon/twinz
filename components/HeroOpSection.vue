@@ -21,14 +21,14 @@
 						We're now minting <span class="text-primary">Founder's Pass</span> NFTs!
 					</div>
 					<div class="flex flex-col items-center sm:flex-row">
-						<a v-if="whitelistFinished" @click.prevent="publicMint"
+						<a @click.prevent="publicMint"
 							class="mb-4 w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8 hover:cursor-pointer">
 							Public Mint
 						</a>
-						<a v-else @click.prevent="whitelistMint"
+						<!-- <a v-else @click.prevent="whitelistMint"
 							class="mb-4 w-60 border border-solid border-primary bg-primary px-9 py-5 text-center font-bold sm:mb-0 sm:mr-8 hover:cursor-pointer">
 							Whitelist Mint
-						</a>
+						</a> -->
 						<!-- <a
 							class="w-60 border border-solid border-primary px-9 py-5 text-center font-bold text-primary duration-300 hover:bg-primary hover:text-white hover:cursor-pointer">
 							Discord Open Soon

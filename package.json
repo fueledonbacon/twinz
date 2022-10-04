@@ -33,7 +33,7 @@
     "core-js": "^3.15.1",
     "dotenv": "^9.0.2",
     "ethers": "5.5.1",
-    "json-format": "^1.0.1",
+    "json-format": "1.0.1",
     "merkletreejs": "^0.2.31",
     "mongodb": "^4.5.0",
     "nuxt": "^2.15.7",
