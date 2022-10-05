@@ -49,6 +49,7 @@
   "function transferFrom(address,address,uint256)",
   "function transferOwnership(address)",
   "function userHasMinted(address) view returns (bool)",
+  "function verifyWhitelist(bytes32[],address) view returns (bool)",
   "function whitelistFinished() view returns (bool)",
   "function whitelistMerkleRoot() view returns (bytes32)",
   "function whitelistMint(bytes32[]) payable",

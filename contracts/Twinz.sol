@@ -12,7 +12,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 import "./Whitelist.sol";
 import "./ERC721A.sol";
 
-contract Twinz is ERC721A, Whitelist, Ownable {
+contract Twinz is ERC721A, Ownable, Whitelist {
     using Strings for uint256;
 
     uint256 private constant _MAX_SUPPLY = 100;
@@ -23,7 +23,6 @@ contract Twinz is ERC721A, Whitelist, Ownable {
     
     string private _baseUri;
 
-    bytes32 public whitelistMerkleRoot;
     bool public whitelistFinished;
     bool public salePeriodOverride;
 

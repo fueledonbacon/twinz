@@ -7,12 +7,9 @@ https://fueledonbacon.com
 pragma solidity ^0.8.13;
 
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
-import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
 
 contract Whitelist is Ownable {
-    using Strings for uint256;
-
     bytes32 public whitelistMerkleRoot;
 
     constructor(bytes32 _whitelistMerkleRoot)
