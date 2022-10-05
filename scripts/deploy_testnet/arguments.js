@@ -2,11 +2,9 @@ const { default: MerkleTree } = require('merkletreejs');
 const { utils } = require("ethers");
 let addresses = require("./addresses");
 
-
 require('dotenv').config({ path: __dirname + '/.env' })
 
 /********************************* */
-//TODO: remove for mainnet launch
 addresses = [
     ...addresses,
     "0x05db46B2588ebB55B4525b5d6103F41a776f9ec2",
@@ -17,6 +15,10 @@ addresses = [
 /********************************** */
 
 const SELL_PRICE = utils.parseEther("0.15")
+
+function hashData(account) {
+    return Buffer.from(utils.solidityKeccak256(['address'], [account]).slice(2), 'hex')
+}
 
 function merkleTree(addresses) {
     let accounts = [];
@@ -29,10 +31,6 @@ function merkleTree(addresses) {
 
 const getProof = (merkleTree, account) => {
     return merkleTree.getHexProof(hashData(account));
-}
-
-function hashData(account) {
-    return Buffer.from(utils.solidityKeccak256(['address'], [account]).slice(2), 'hex')
 }
 
 module.exports = [

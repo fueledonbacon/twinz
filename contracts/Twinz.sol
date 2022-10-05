@@ -9,9 +9,10 @@ pragma solidity ^0.8.13;
 import "@openzeppelin/contracts/utils/cryptography/MerkleProof.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/access/Ownable.sol";
+import "./Whitelist.sol";
 import "./ERC721A.sol";
 
-contract Twinz is ERC721A, Ownable {
+contract Twinz is ERC721A, Whitelist, Ownable {
     using Strings for uint256;
 
     uint256 private constant _MAX_SUPPLY = 100;
@@ -45,9 +46,8 @@ contract Twinz is ERC721A, Ownable {
         string memory symbol,
         string memory baseUri
     )
-        ERC721A(name, symbol)
+        ERC721A(name, symbol) Whitelist(_whitelistMerkleRoot)
     {
-        whitelistMerkleRoot = _whitelistMerkleRoot;
         _baseUri = baseUri;
         price = price_;
         startSaleTime = _startSaleTime;
@@ -86,10 +86,6 @@ contract Twinz is ERC721A, Ownable {
         to.transfer(address(this).balance);
     }
 
-    function setMerkleRoot(bytes32 _whitelistMerkleRoot) external onlyOwner {
-        whitelistMerkleRoot = _whitelistMerkleRoot;
-    }
-
     function setBaseURI(string memory baseUri) external onlyOwner {
         _baseUri = baseUri;
     }
@@ -107,14 +103,11 @@ contract Twinz is ERC721A, Ownable {
         return _baseUri;
     }
 
-    function _verifyWhitelist(bytes32[] calldata _merkleProof, address addr) private view returns(bool) {
-       return (MerkleProof.verify(_merkleProof, whitelistMerkleRoot, keccak256(abi.encodePacked(addr))) == true);
-    }
     
     function whitelistMint(bytes32[] calldata _merkleProof) external payable canMint {
         require(!whitelistFinished, "WHITELIST_FINISHED");
         address account = _msgSender();
-        require(_verifyWhitelist(_merkleProof, account), "WHITELIST_NOT_VERIFIED");
+        require(verifyWhitelist(_merkleProof, account), "WHITELIST_NOT_VERIFIED");
         _mint(account);
     }
 
