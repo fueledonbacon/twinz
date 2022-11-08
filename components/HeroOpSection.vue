@@ -18,7 +18,7 @@
 						Come Join The TwinZ Community
 					</div>
 					<div class="mb-8 text-4xl font-bold sm:text-5xl md:text-6xl">
-						We're now minting <span class="text-primary">Founder's Pass</span> NFTs!
+						Double the fun with Double the Rewards Because <span class="text-primary">Twin</span>ning is Winning!
 					</div>
 					<div class="flex flex-col items-center sm:flex-row">
 						<!-- <a @click.prevent="publicMint"
