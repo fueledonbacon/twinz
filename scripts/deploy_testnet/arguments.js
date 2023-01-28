@@ -14,7 +14,7 @@ addresses = [
 ]
 /********************************** */
 
-const SELL_PRICE = utils.parseEther("0.15")
+const SELL_PRICE = utils.parseEther("0.001")
 
 function hashData(account) {
     return Buffer.from(utils.solidityKeccak256(['address'], [account]).slice(2), 'hex')

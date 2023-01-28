@@ -1,10 +1,10 @@
 {
 	"goerli": {
-		"address": "0x90d423a5B112ee8afcf476E6494946a3017Dfca5",
+		"address": "0xF217Ad15ACfE4001403C57665Fe7BAf87C94956E",
 		"arguments": [
 			{
 				"type": "BigNumber",
-				"hex": "0x0214e8348c4f0000"
+				"hex": "0x038d7ea4c68000"
 			},
 			1664906400,
 			1665511200,
